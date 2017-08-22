@@ -1,10 +1,12 @@
-class JobsController < ApplicationController
+class Admin::JobsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :find_jobs, only: [:edit,:update,:destroy]
 
+  before_action :require_is_admin
+
   def index
-    @jobs = Job.published.paged(params[:page])
+    @jobs = Job.all.paged(params[:page])
   end
 
   def new
@@ -14,7 +16,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to jobs_path, notice: "#{@job.title} created"
+      redirect_to admin_jobs_path, notice: "#{@job.title} created"
     else
       render :new
     end
@@ -30,7 +32,7 @@ class JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to jobs_path, notice: "#{@job.title} updated"
+      redirect_to admin_jobs_path, notice: "#{@job.title} updated"
     else
       render :edit
     end
@@ -38,7 +40,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to jobs_path, alert: "#{@job.title} deleted"
+    redirect_to admin_jobs_path, alert: "#{@job.title} deleted"
   end
 
   private
@@ -50,4 +52,11 @@ class JobsController < ApplicationController
   def find_jobs
     @job = Job.find(params[:id])
   end
+
+  def require_is_admin
+    if !current_user.admin?
+      redirect_to root_path, alert: "You have no Permission!"
+    end
+  end
+
 end
