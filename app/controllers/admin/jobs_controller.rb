@@ -8,7 +8,14 @@ class Admin::JobsController < ApplicationController
   layout 'admin'
 
   def index
-    @jobs = Job.all.paged(params[:page]).recent
+    @jobs = case params[:is_hidden]
+            when "true"
+              Job.where(:is_hidden => true).paged(params[:page]).recent
+            when "false"
+              Job.where(:is_hidden => false).paged(params[:page]).recent
+            else
+              Job.all.paged(params[:page]).recent
+            end
   end
 
   def new

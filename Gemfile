@@ -32,6 +32,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'faker'
 gem 'will_paginate'
+gem 'font-awesome-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
