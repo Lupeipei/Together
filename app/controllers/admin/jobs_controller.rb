@@ -5,8 +5,10 @@ class Admin::JobsController < ApplicationController
 
   before_action :require_is_admin
 
+  layout 'admin'
+
   def index
-    @jobs = Job.all.paged(params[:page])
+    @jobs = Job.all.paged(params[:page]).recent
   end
 
   def new

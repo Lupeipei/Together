@@ -6,6 +6,7 @@ class Job < ApplicationRecord
   validate :upper_bound_cannot_less_than_lower_bound
   scope :paged, -> (page) {paginate(:page => page, :per_page => 10)}
   scope :published, -> {where(:is_hidden => false)}
+  scope :recent, -> {order("created_at DESC")}
 
   def upper_bound_cannot_less_than_lower_bound
     if self.wage_upper_bound <= self.wage_lower_bound
