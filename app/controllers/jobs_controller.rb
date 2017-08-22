@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_action :find_jobs, only: [:edit,:update,:destroy]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.paged(params[:page])
   end
 
   def new
