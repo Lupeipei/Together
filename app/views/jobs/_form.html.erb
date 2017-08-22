@@ -1,0 +1,12 @@
+<%= simple_form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.input :title , label: "职缺"%>
+    <%= f.input :description, label: "描述" %>
+    <%= f.input :company , label: "公司"%>
+    <%= f.input :city , label: "城市"%>
+    <%= f.input :wage_lower_bound, label: "薪资下限" %>
+    <%= f.input :wage_upper_bound, label: "薪资上限" %>
+    <%= f.input :contact_email , label: "邮箱"%>
+    <%= f.input :is_hidden %>
+  </div>
+<% end %>

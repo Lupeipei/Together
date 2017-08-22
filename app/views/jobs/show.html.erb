@@ -1,0 +1,10 @@
+<h1><%= @job.title %></h1>
+
+<ul>
+  <li><label>职缺描述：</label><%= simple_format(@job.description)%></li>
+  <li><label>薪资下限：</label><%= @job.wage_lower_bound %></li>
+  <li><label>薪资上限：</label><%= @job.wage_upper_bound %></li>
+  <li><label>公司：</label><%= @job.company %></li>
+  <li><label>城市：</label><%= @job.city %></li>
+  <li><label>联系方式:</label><%= @job.contact_email %></li>
+</ul>
