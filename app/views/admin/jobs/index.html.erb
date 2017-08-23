@@ -8,7 +8,8 @@
       <th>Company</th>
       <th>City</th>
       <th>Salary</th>
-      <th>Email</th>
+      <th>Options</th>
+      <th>Updated at</th>
     </tr>
   </thead>
   <% @jobs.each do |job| %>
@@ -17,7 +18,9 @@
         <%= render_job_status(job)%>
         <%= link_to(job.title, admin_job_path(job))%>
       </td>
-      <td><%= job.wage_upper_bound%></td>
+      <td><i class="fa fa-building" aria-hidden="true"></i> <%= job.company%></td>
+      <td><i class="fa fa-location-arrow" aria-hidden="true"></i> <%= job.city %></td>
+      <td><%= job.wage_lower_bound%> ~ <%= job.wage_upper_bound%></td>
       <td>
         <%= link_to("Edit", edit_admin_job_path(job))%> |
         <%= link_to("Delete", admin_job_path(job), method: :delete, data: {confirm: "Are you sure?"})%>
@@ -28,7 +31,7 @@
         <% end %>
       </td>
       <td>
-        <%= job.created_at %>
+        <%= job.updated_at %>
       </td>
     </tr>
   <% end %>
