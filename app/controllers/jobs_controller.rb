@@ -4,7 +4,14 @@ class JobsController < ApplicationController
   before_action :find_jobs, only: [:edit,:update,:destroy]
 
   def index
-    @jobs = Job.published.paged(params[:page]).recent
+    @jobs = case params[:order]
+            when "by_lower_bound"
+              Job.published.paged(params[:page]).order("wage_lower_bound DESC")
+            when "by_upper_bound"
+              Job.published.paged(params[:page]).order("wage_upper_bound DESC")
+            else
+              Job.published.paged(params[:page]).recent
+            end
   end
 
   def new
