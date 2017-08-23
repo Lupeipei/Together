@@ -8,6 +8,9 @@ class Job < ApplicationRecord
   scope :published, -> {where(:is_hidden => false)}
   scope :recent, -> {order("created_at DESC")}
 
+  has_many :resumes
+  
+
   def upper_bound_cannot_less_than_lower_bound
     if self.wage_upper_bound <= self.wage_lower_bound
       errors.add(:wage_upper_bound, "can't be less than wage_lower_bound")
