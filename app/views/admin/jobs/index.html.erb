@@ -8,6 +8,7 @@
       <th>Company</th>
       <th>City</th>
       <th>Salary</th>
+      <th>Resumes</th>
       <th>Options</th>
       <th>Updated at</th>
     </tr>
@@ -21,6 +22,7 @@
       <td><i class="fa fa-building" aria-hidden="true"></i> <%= job.company%></td>
       <td><i class="fa fa-location-arrow" aria-hidden="true"></i> <%= job.city %></td>
       <td><%= job.wage_lower_bound%> ~ <%= job.wage_upper_bound%></td>
+      <td><%= link_to(job.resumes.count, admin_job_resumes_path(job))%></td>
       <td>
         <%= link_to("Edit", edit_admin_job_path(job))%> |
         <%= link_to("Delete", admin_job_path(job), method: :delete, data: {confirm: "Are you sure?"})%>

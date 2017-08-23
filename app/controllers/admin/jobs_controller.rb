@@ -74,10 +74,6 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      redirect_to root_path, alert: "You have no Permission!"
-    end
-  end
+
 
 end
