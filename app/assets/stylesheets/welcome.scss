@@ -1,3 +1,24 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// landingpage
+
+/*轮播图*/
+.banner-m img {
+  width: 1200px;
+  height: 1000px;
+  margin: 0px auto;
+  // overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    height: 650px;
+}
+
+.carousel-inner {
+  height: 630px;
+  text-align: center;
+  width: 100%;
+}

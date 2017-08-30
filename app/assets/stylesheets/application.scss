@@ -19,35 +19,7 @@
 @import "font-awesome";
 @import "common.scss";
 
-// landingpage
 
-.jumbotron {
-  background-image:url('/images/TogetherCampaign.jpg');
-  background-repeat: no-repeat;
-  background-color: rgba(250,250,250,0.6);
-  background-size: cover;
-  padding-bottom: 100px;
-  border-color: rgba(#77576c, 0.08);
-}
-
- .jumbotron h1, .jumbotron .h1 {
-   text-align: left;//文字左对齐
-   color: rgb(245, 17, 17);  //字体颜色
-
-   padding: 50px 20px 0;//上50px，左右20px，下0
- }
-
- .jumbotron p {
-   margin: 0;//上下左右margin为0
-   font-size: 26px;//字体大小
-   max-width: 500px;//最大宽度
-   padding: 20px;//上下左右padding为20px
-   text-align:left;//文字左对齐
-   color: rgb(245, 17, 17);//字体颜色
-
-   border-bottom-right-radius: 3px;//右下角圆边
-   border-bottom-left-radius: 3px;//左下角圆边
- }
 
 
 .title {
