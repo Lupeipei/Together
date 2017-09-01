@@ -107,8 +107,8 @@
    text-align: center;
    color: #6bd62c;
    letter-spacing: 0.1em;                              //把字间距撑开，视觉感更优雅
-   font-size: 1.6em;
-   margin-top: 3.2em;
+   font-size: 1.8em;
+   margin-top: 3em;
  }
  .landingpage-mid .intro-description {                             //编写内容样式
    text-align: center;
@@ -120,6 +120,34 @@
    letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
  }
 
+
+/*  --- push部分 ---  */
+
+.landingpage-push {
+  height: 200px;
+  background-image: url(/images/TogetherCampaign.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+
+.landingpage-push .push-button {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 200px;
+  color: white;
+  background-color: #4CA418;
+  border-color: #4CA418;
+}
+
+.landingpage-push .push-button:hover {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 200px;
+  color: #f5f5f5;
+  background-color: #6bd62c;
+  border-color: #6bd62c;
+}
 /*  --- 响应式设置 ---  */
 @media screen and (min-width: 980px){
     .hero { width: 980px; }
