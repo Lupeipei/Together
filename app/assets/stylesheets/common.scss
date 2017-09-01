@@ -204,13 +204,18 @@
   font-size: 12px;
 }
 
-.btn-default-login {
+.btn-login {
     color: #666666;
     background-color: transparent;
     border-color: #d7d7d7;
+    margin-top: -6px;
+    width: 80px;
+
 }
-.btn-primary-signup {
+.btn-signup {
     color: white;
-    background-color: #fa492b;
-    border-color: #fa492b;
+    background-color: rgb(76,164,24);
+    border-color: #d7d7d7;
+    margin-top: -6px;
+    width: 80px;
 }

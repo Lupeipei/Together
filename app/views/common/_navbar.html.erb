@@ -7,8 +7,8 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
 
           <ul class="nav navbar-nav navbar-left">
-            <li><%= link_to("我要下单", jobs_path)%></li>
-            <li><%= link_to("我要接单", jobs_path)%></li>
+            <li><%= link_to("我要上货", jobs_path)%></li>
+            <li><%= link_to("我要翻牌", jobs_path)%></li>
             <li><%= link_to("关于Together", about_path)%></li>
           </ul>
           <!-- search-bar -->
@@ -21,8 +21,8 @@
 
             <!-- devise -->
             <% if !current_user %>
-              <li><a href="#" data-toggle="modal" data-target="#signup-modal" ><span class="glyphicon glyphicon-log-in" aria-hidden="true">注册</span></a></li>
-              <li><a href="#" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-user" aria-hidden="true">登入</span></a></li>
+              <li><a href="#" data-toggle="modal" data-target="#signup-modal" ><span class="btn btn-login">注册</span></a></li>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal" ><span class="btn btn-signup">登入</span></a></li>
             <% else %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
