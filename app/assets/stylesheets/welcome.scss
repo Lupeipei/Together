@@ -120,6 +120,34 @@
    letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
  }
 
+/*-- 用户评价部分 --*/
+.landingpage-evaluation {
+  height: 300px;
+}
+.short-line {
+  background: rgba(0,0,0,0.1);
+  margin: 15px auto 35px auto;
+  width: 125px;
+  height: 2px;
+}
+.person .avata-wrapper {
+    position: absolute;
+    background-position: center center;
+    margin-left: 70px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.person .words {
+   position: relative;
+   height: 75px;
+   overflow: hidden;
+   font-size: 14px;
+   z-index: 0;
+   margin-top: 150px;
+   font-weight: 800;
+}
+
 
 /*  --- push部分 ---  */
 
@@ -128,10 +156,13 @@
   background-image: url(/images/TogetherCampaign.jpg);
   background-position: center center;
   background-repeat: no-repeat;
-
 }
-
-.landingpage-push .push-button {
+.push-text {
+  background: rgba(0,0,0,0.2);
+  height: 300px;
+  margin-top: 15px;
+}
+.push-text .push-button {
   text-align: center;
   padding: 10px 20px;
   margin-top: 200px;

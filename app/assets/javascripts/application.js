@@ -19,9 +19,15 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// 首页轮播landingpage
-$(document).ready(function() {
-   $('.carousel').carousel()
-    // $('#myCarousel').carousel({interval: 3000})
-    // $(window).trigger('scroll') // 一开始就触发一下滚动事件
-});
+// 回到顶部按钮
+$(document).on('click','#gotop', function(){
+  $('body').animate({'scrollTop': 0},200);
+})
+
+$(window).scroll(function(){
+  if ($(this).scrollTop() > 500 ) {
+    $('#gotop').fadeIn();
+  } else {
+    $('#gotop').fadeOut();
+  }
+})
