@@ -20,67 +20,16 @@
 @import "common.scss";
 
 
-
-
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  max-width: 1000px;//最大宽度
-  margin-top: 200px;//和顶部拉开距离
-  margin-bottom: 0;//这样就可以紧接息面的描述文字
-  border-top-right-radius: 3px;//右上角圆边
-  border-top-left-radius: 3px;//左上角圆边
+html {
+    min-height: 100%;
+    position: relative;
 }
 
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
+body {
+  margin-bottom: 180px;
 }
 
-.lead {
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
-}
 
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
-
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
-}
-
-.btn-danger {
-    color: #fff;//字体颜色
-
-    background-color: #EF6C00;//背景颜色
-
-    border-color: #EF6C00;//边框颜色
-
-}
-
-.btn-danger:hover {
-    background-color: #E65100;//鼠标放置在btn上的背景颜色
-
-    border-color: #E65100;//鼠标放置在btn上的边框颜色
-
-}
-
-.btn-lg, .btn-group-lg > .btn {
-    padding: 8px 16px;//通过padding来决定btn的大小
-    font-size: 20px;//btn文字大小
-    letter-spacing: 3px;//调整文字间距
-    border-radius: 3px;//btn圆角
-    width: 200px;//这里用指定宽度把btn拉得更长
-}
 
 // admin/jobs/index
 .custab{
