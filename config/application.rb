@@ -13,5 +13,6 @@ module JobListing04
     # -- all .rb files in that directory are automatically loaded.
 
     config.i18n.default_locale = "zh-CN"
+    config.time_zone = "Beijing"
   end
 end
