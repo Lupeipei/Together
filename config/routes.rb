@@ -17,5 +17,6 @@ Rails.application.routes.draw do
       resources :resumes
     end
   end
-  get '/about/', to:'jobs#about'
+  resources :events
+  get '/about', to: 'events#about'
 end
