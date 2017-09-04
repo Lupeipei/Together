@@ -1,0 +1,47 @@
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2>共<%= pluralize(@event.errors.count, "error")%>，无法保存 </h2>
+
+    <ul>
+      <% @events.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="form-group">
+    <%= f.label : "活动名称" %>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label : "描述" %>
+    <%= f.text_area :description, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label : "地址" %>
+    <%= f.text_field :address, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label : "主办方" %>
+    <%= f.text_field :sponsor, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.association :category %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :start_time %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :end_time %>
+  </div>
+
+  <script>
+    $("#event_category_id").select2({theme: "bootstrap"});
+  </script>

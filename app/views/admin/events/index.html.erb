@@ -10,6 +10,7 @@
       <th>主办方</th>
       <th>类别</th>
       <th>状态</th>
+      <th>选项</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,10 @@
         <td><%= event.sponsor %></td>
         <td><%= event.category.name %></td>
         <td>进行中</td>
+        <td>
+          <%= link_to("Edit", edit_admin_event_path(event))%> |
+          <%= link_to("Delete", admin_event_path(event), method: :delete, data: {confirm: "Are you sure?"})%>
+        </td>
       </tr>
     <% end %>
   </tbody>

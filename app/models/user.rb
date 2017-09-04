@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :resumes
+  has_many :events
   def admin?
     self.is_admin
   end
