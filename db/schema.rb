@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904003049) do
+ActiveRecord::Schema.define(version: 20170904022927) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170904003049) do
     t.integer  "category_id"
     t.integer  "user_id"
     t.string   "logo"
+    t.string   "status"
     t.index ["category_id"], name: "index_events_on_category_id"
   end
 
