@@ -15,7 +15,7 @@ class Admin::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      redirect_to admin_events_path, notice: "#{@envent.title} created"
+      redirect_to admin_events_path, notice: "#{@event.title} created"
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to admin_events_path, notice: "#{@envent.title} updated"
+      redirect_to admin_events_path, notice: "#{@event.title} updated"
     else
       render :edit
     end
@@ -41,13 +41,13 @@ class Admin::EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to admin_events_path, alert: "#{@envent.title} deleted"
+    redirect_to admin_events_path, alert: "#{@event.title} deleted"
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :start_time, :end_time, :address, :sponsor, :category_id)
+    params.require(:event).permit(:title, :logo, :remove_logo,:description, :start_time, :end_time, :address, :sponsor, :category_id)
   end
 
 

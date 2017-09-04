@@ -1,3 +1,10 @@
+<div class="pull-right" style="margin-top:10px;">
+  <%= link_to("编辑活动", edit_admin_event_path(@event), class: "btn btn-default")%>
+</div>
+<% if @event.logo.present? %>
+  <%= link_to image_tag(@event.logo.url(:thumb)), @event.logo.url, :target => "_blank"%>
+<% end %>
+
 <h1><%= @event.title %></h1>
 <p>活动介绍：<%= @event.description %></p>
 <ul>

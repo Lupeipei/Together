@@ -131,6 +131,11 @@
   padding-top: 5px;
 }
 
+.login-part a:hover,
+.login-part a:focus {
+  color: rgb(76,164,24);
+}
+
 .btn-login {
     color: white;
     background-color: transparent;

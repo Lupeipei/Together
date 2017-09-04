@@ -7,14 +7,14 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
 
           <ul class="nav navbar-nav navbar-left">
-            <li><%= link_to("我要邀约", jobs_path)%></li>
-            <li><%= link_to("我要赴约", jobs_path)%></li>
+            <li><%= link_to("我要邀约", events_path)%></li>
+            <li><%= link_to("我要赴约", events_path)%></li>
             <li><%= link_to("关于Together", about_path)%></li>
           </ul>
           <!-- search-bar -->
 
           <div class="jobs-search-form">
-            <%= render :partial => "jobs/search_bar" %>
+            <%= render :partial => "events/search_bar" %>
           </div>
 
           <ul class="nav navbar-nav navbar-right">
@@ -33,7 +33,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% if current_user.admin?%>
-                  <li><%= link_to("Admin Panel", admin_jobs_path)%></li>
+                  <li><%= link_to("Admin Panel", admin_events_path)%></li>
                   <% end %>
                   <li><%= link_to("登出", destroy_user_session_path, method: :delete)%></li>
                 </ul>

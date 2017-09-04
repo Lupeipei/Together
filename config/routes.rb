@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   #     resources :resumes
   #   end
   # end
-  resources :events
+  resources :events do
+    collection do
+      get :search
+    end
+  end
   namespace :admin do
     resources :events
   end
