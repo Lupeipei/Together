@@ -8,6 +8,21 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def new
+    @event = Event.new
+  end
+
+
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to events_path
+    else
+      render :new
+    end
+  end
+
+
   def search
     if @query_string.present?
       search_result = Event.ransack(@search_criteria).result(:distinct => true)

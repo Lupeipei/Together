@@ -1,8 +1,23 @@
-<h1><%= @event.title %></h1>
-<p>活动介绍：<%= @event.description %></p>
-<ul>
-  <li>开始时间：<%= @event.start_time %></li>
-  <li>结束时间：<%= @event.start_time %></li>
-  <li>地点：<%= @event.address %></li>
-  <li>主办：<%= @event.sponsor %></li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <% if @event.logo.present? %>
+          <%= link_to image_tag(@event.logo.url,size: "200x200", :target => "_blank")%>
+        <% end %>
+      </div>
+
+      <div class="col-md-9">
+        <h1><%= @event.title %></h1>
+        <ul>
+          <li>开始时间：<%= @event.start_time %></li>
+          <li>结束时间：<%= @event.start_time %></li>
+          <li>地点：<%= @event.address %></li>
+          <li>主办：<%= @event.sponsor %></li>
+        </ul>
+        <p>活动介绍：<%= @event.description %></p>
+      </div>
+    </div>
+  </div>
+
+</div>
