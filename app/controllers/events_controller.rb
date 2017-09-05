@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:favrite]
+  before_action :authenticate_user!, only: [:favrite, :new, :create]
 
   def index
     @events = Event.all.paginate(:page => params[:page], :per_page => 10)
@@ -54,8 +54,8 @@ class EventsController < ApplicationController
     {:title_or_description_cont => query_string}
   end
 
-  # def event_params
-  #   params.require(:event).permit(:title, :logo, :remove_logo,:status,:description, :start_time, :end_time, :address, :sponsor, :category_id)
-  # end
+  def event_params
+    params.require(:event).permit(:title, :logo, :remove_logo,:status,:description, :start_time, :end_time, :address, :sponsor,:limited_num,:category_id)
+  end
 
 end

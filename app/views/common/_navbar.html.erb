@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
 
           <ul class="nav navbar-nav navbar-left">
-            <li><%= link_to("我要邀约", events_path)%></li>
+            <li><%= link_to("我要邀约", new_event_path)%></li>
             <li><%= link_to("我要赴约", events_path)%></li>
             <li><%= link_to("关于Together", about_path)%></li>
           </ul>
@@ -44,7 +44,7 @@
                   <% end %>
                   <li><%= link_to(content_tag(:i," 个人中心", class: 'fa fa-user' ), account_user_path)%></li>
                   <li><%= link_to(content_tag(:i," 我的收藏", class: 'fa fa-heart' ),account_favorites_path(current_user))%></li>
-                  <li><%= link_to(content_tag(:i," 我发布的", class: 'fa fa-pencil-square-o'), "#")%></li>
+                  <li><%= link_to(content_tag(:i," 我的邀请", class: 'fa fa-pencil-square-o'), account_events_path)%></li>
                   <li><%= link_to(content_tag(:i," 登出", class: 'fa fa-sign-out' ), destroy_user_session_path, method: :delete)%></li>
                 </ul>
               </li>
