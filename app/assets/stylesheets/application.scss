@@ -36,3 +36,13 @@ body {
   margin: 0px -15px;
   border-radius: 0px;
 }
+
+ // 设置头像大小
+ .thumbnail_avatar {
+ border-radius:50%;
+ width:30px;
+ height:30px;
+ padding:1px;
+ margin-top:10px;
+ margin-bottom: 2px;
+}

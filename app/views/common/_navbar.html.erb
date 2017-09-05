@@ -26,9 +26,16 @@
               <%= link_to("登入", new_user_session_path, class: "btn btn-signup")%>
             </div>
             <% else %>
+            <li>
+              <% if current_user.avatar.present? %>
+                <%= image_tag(current_user.avatar.thumb.url, class: "thumbnail_avatar")%>
+              <% else %>
+                <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", class: "thumbnail_avatar")%>
+              <% end %>
+            </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                   <i class="fa fa-user-circle" aria-hidden="true"></i> Hi!, <%= current_user.display_name %>
+                  Hi!, <%= current_user.display_name %>
                   <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
