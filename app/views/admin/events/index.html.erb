@@ -19,13 +19,20 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to(event.title, admin_event_path(event)) %></td>
+        <td>
+          <% link_to event_path(event)%>
+           <% if event.logo.present? %>
+            <%= link_to image_tag(event.logo.thumb.url, class:"event_logo_sm")%>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/100x100&text=No Pic", class: "event_logo_sm")%>
+          <% end %>
+          <%= link_to(event.title, admin_event_path(event)) %></td>
         <td><%= event.start_time %></td>
         <td><%= event.end_time %></td>
         <td><%= event.address %></td>
         <td><%= event.sponsor %></td>
         <td><%= event.category.name %></td>
-        <td>进行中</td>
+        <td><%= t(event.status, :scope => "event.status") %></td>
         <td>
           <%= link_to("Edit", edit_admin_event_path(event))%> |
           <%= link_to("Delete", admin_event_path(event), method: :delete, data: {confirm: "Are you sure?"})%>

@@ -7,10 +7,10 @@
 /*  --- 大图高度 和 滚动按钮 ---  */
 #myCarousel {                                      //滚动大图的相框高
     position: relative;
-    height: 700px;
+    height: 800px;
 }
 #myCarousel .carousel-inner .item {                //图片截取的宽度，这里与相框高度一致
-    height: 700px;
+    height: 800px;
     // background-size: cover;                             //确保图片完全撑开
     background-position: center center;
     background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 <h1 class="text-center">活动列表</h1>
 
-<div class="col-md-10 col-md-offset-1" style="margin-top: 10px;">
+<div class="col-md-10 col-md-offset-1" style="margin-top: 20px;">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -10,19 +10,30 @@
         <th>地点</th>
         <th>主办方</th>
         <th>类别</th>
+        <th>人数限额</th>
+        <th>剩余名额</th>
         <th>状态</th>
       </tr>
     </thead>
     <tbody>
       <% @events.each do |event| %>
         <tr>
-          <td><%= link_to(event.title, event_path(event)) %></td>
+          <td>
+            <% link_to event_path(event)%>
+             <% if event.logo.present? %>
+              <%= link_to image_tag(event.logo.thumb.url, class:"event_logo_sm")%>
+            <% else %>
+              <%= link_to image_tag("http://placehold.it/100x100&text=No Pic", class: "event_logo_sm")%>
+            <% end %>
+            <%= link_to(event.title, event_path(event)) %></td>
           <td><%= event.start_time %></td>
           <td><%= event.end_time %></td>
           <td><%= event.address %></td>
           <td><%= event.sponsor %></td>
           <td><%= event.category.name %></td>
-          <td>进行中</td>
+          <td><%= event.limited_num %></td>
+          <td>10</td>
+          <td><%= t(event.status, :scope => "event.status") %></td>
         </tr>
       <% end %>
     </tbody>

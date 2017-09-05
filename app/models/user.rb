@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :resumes
   has_many :events
+  has_many :favorites
+  has_many :favorite_events, through: :favorites, source: :event
 
   mount_uploader :avatar, AvatarUploader
   def admin?
@@ -18,5 +20,17 @@ class User < ApplicationRecord
     else
       self.email.split("@").first
     end
+  end
+
+  def is_favorite_of?(event)
+    favorite_events.include?(event)
+  end
+
+  def favorite!(event)
+    favorite_events << event
+  end
+
+  def unfavorite!(event)
+    favorite_events.delete(event)
   end
 end

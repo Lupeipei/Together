@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin-top: 10px;">
       <div class="col-md-3">
         <% if @event.logo.present? %>
           <%= link_to image_tag(@event.logo.url,size: "200x200", :target => "_blank")%>
+        <% else %>
+           <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", size: "200x200", :target => "_blank")%>
         <% end %>
       </div>
 
@@ -16,6 +18,14 @@
           <li>主办：<%= @event.sponsor %></li>
         </ul>
         <p>活动介绍：<%= @event.description %></p>
+        <br>
+        <% if current_user.is_favorite_of?(@event) %>
+          <%= link_to "取消收藏",favorite_event_path(@event,type: "unfavorite"), method: :put, class: "btn btn-default"%>
+        <% else %>
+          <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
+        <% end %>
+
+        <%= link_to("申请赴约", "#", class: "btn btn-success")%>
       </div>
     </div>
   </div>

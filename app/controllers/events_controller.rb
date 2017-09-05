@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:favrite]
 
   def index
     @events = Event.all.paginate(:page => params[:page], :per_page => 10)
@@ -15,11 +16,23 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
     if @event.save
       redirect_to events_path
     else
       render :new
     end
+  end
+
+  def favorite
+    @event = Event.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorite!(@event)
+    else type == "unfavorite"
+      current_user.unfavorite!(@event)
+    end
+    redirect_to :back
   end
 
 
@@ -40,5 +53,9 @@ class EventsController < ApplicationController
   def search_criteria(query_string)
     {:title_or_description_cont => query_string}
   end
+
+  # def event_params
+  #   params.require(:event).permit(:title, :logo, :remove_logo,:status,:description, :start_time, :end_time, :address, :sponsor, :category_id)
+  # end
 
 end

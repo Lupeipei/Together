@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
   mount_uploader :logo, EventlogoUploader
+  has_many :favorites
+  has_many :fans, through: :favorites, source: :user
 
   # status of events
   STATUS = ["preparing", "processing", "over"]

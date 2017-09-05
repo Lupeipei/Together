@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-bordered" style="margin-top: 50px;">
+      <thead>
+        <th>活动名称</th>
+        <th>开始时间：</th>
+        <th>结束时间：</th>
+        <th>地点：</th>
+        <th>主办：</th>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+        <tr>
+          <td>
+            <% link_to event_path(event)%>
+             <% if event.logo.present? %>
+              <%= link_to image_tag(event.logo.thumb.url, class:"event_logo_sm")%>
+            <% else %>
+              <%= link_to image_tag("http://placehold.it/100x100&text=No Pic", class: "event_logo_sm")%>
+            <% end %>
+            | <%= link_to(event.title, event_path(event))%></td>
+          <td><%= event.start_time %></td>
+          <td><%= event.start_time %></td>
+          <td><%= event.address %></td>
+          <td><%= event.sponsor %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

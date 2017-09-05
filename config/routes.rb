@@ -21,12 +21,17 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    put :favorite, on: :member
   end
+
   namespace :admin do
     resources :events
+
   end
   namespace :account do
     resource :user
+    resources :favorites
+    resources :events
   end
   get '/about', to: 'events#about'
 end
