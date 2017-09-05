@@ -35,7 +35,7 @@
 /*  --- 标题文字设置 ---  */
 
 .carousel-caption {
-    top: 40%;
+    top: 35%;
     height: 35%;
     z-index: 3;                                       //元素堆叠等级3，将显示在最上层
     color: #fff;
@@ -123,6 +123,20 @@
    letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
  }
 
+/*-- 热卖商品部分 --*/
+.eventList-item {
+  margin: 3em auto 2em;
+}
+
+.eventList-item-pic {
+  margin-bottom: 1.2em;
+  border-radius: 50%;
+}
+.eventList-item-title a {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+}
 /*-- 用户评价部分 --*/
 .landingpage-evaluation {
   height: 300px;

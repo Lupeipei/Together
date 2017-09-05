@@ -67,14 +67,23 @@
     </div>
   </div>
 </div>
-
+<br>
 <!-- 热门邀请一览表 -->
 
-<div class="container hot-jobs-intro">
+<div class="container hot-events-intro">
   <div class="row">
     <div class="col-md-12">
       <h3 class="text-center">热门邀请</h3>
       <div class="short-line"></div>
+      <ul class="eventlist clearfix">
+        <% Event.all.each_with_index do |event,index| %>
+        <div class="col-md-4">
+          <% if index < 6 %>
+            <%= render :partial => "event_item", locals: {event: event, index: index}%>
+          <% end %>
+        </div>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

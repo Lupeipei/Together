@@ -143,7 +143,7 @@ Event.create!(
   start_time: Time.local(2017, 11, 15, 10, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/101.jpg")
+  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/102.jpg")
 )
 
 # 交友4
