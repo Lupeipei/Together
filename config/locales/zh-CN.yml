@@ -1,10 +1,4 @@
 "zh-CN":
-  # devise
-  devise:
-    sessions:
-      signed_in: 登入成功，欢迎回来！
-      signed_out: 登出成功
-
   event:
     status:
       preparing: 准备中
