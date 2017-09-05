@@ -1,18 +1,15 @@
-<h1 class="text-center">个人中心</h1>
-<div class="pull-right">
-  <%= link_to "编辑个人信息", edit_account_user_path(@user), class: "btn btn-default"%>
-</div>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-3">
+      <h1 class="text-center">个人中心</h1>
+      <div class="col-md-4">
         <% if current_user.avatar.present? %>
           <%= link_to image_tag(current_user.avatar.url,size: "200x200", :target => "_blank")%>
         <% end %>
         <p class="text-center">当前头像</p>
       </div>
 
-      <div class="col-md-9">
+      <div class="col-md-8">
         <h3>基本信息</h3>
         <br>
 
