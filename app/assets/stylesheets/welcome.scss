@@ -35,10 +35,11 @@
 /*  --- 标题文字设置 ---  */
 
 .carousel-caption {
-    top: 35%;
+    top: 40%;
     height: 35%;
     z-index: 3;                                       //元素堆叠等级3，将显示在最上层
     color: #fff;
+    padding-top: 30px;
     text-align: center;
     background-color: rgba(220,220,220, 0.1);
 }

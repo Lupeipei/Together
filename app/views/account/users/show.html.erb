@@ -5,6 +5,8 @@
       <div class="col-md-4">
         <% if current_user.avatar.present? %>
           <%= link_to image_tag(current_user.avatar.url,size: "200x200", :target => "_blank")%>
+        <% else %>
+          <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", size: "200x200", :target => "_blank")%>
         <% end %>
         <p class="text-center">当前头像</p>
       </div>

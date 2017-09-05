@@ -6,7 +6,7 @@
         <div class="form-inputs log-text">
           <%= f.input :email, required: false, autofocus: true, :label => "邮箱" %>
           <%= f.input :password, required: false, :label => "密码"%>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? , :label => "记住我"%>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">

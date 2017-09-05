@@ -9,7 +9,6 @@
         <th>结束时间</th>
         <th>地点</th>
         <th>主办方</th>
-        <th>类别</th>
         <th>人数限额</th>
         <th>剩余名额</th>
         <th>状态</th>
@@ -30,7 +29,6 @@
           <td><%= event.end_time %></td>
           <td><%= event.address %></td>
           <td><%= event.sponsor %></td>
-          <td><%= event.category.name %></td>
           <td><%= event.limited_num %></td>
           <td>10</td>
           <td><%= t(event.status, :scope => "event.status") %></td>

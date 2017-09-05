@@ -11,6 +11,8 @@
       </div>
 
       <div class="btn-group" data-toggle="buttons">
+        <%= f.label :"活动状态" %>
+        <br>
         <% Event::STATUS.each do |status| %>
           <label class="btn btn-default <%= (status == f.object.status)? 'active':'' %>">
             <%= f.radio_button :status, status %>

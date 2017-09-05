@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:favrite, :new, :create]
+  before_action :authenticate_user!, only: [:favorite, :new, :create]
 
   def index
-    @events = Event.all.paginate(:page => params[:page], :per_page => 10)
+    @events = Event.order("created_at DESC")
   end
 
   def show
