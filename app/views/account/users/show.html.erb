@@ -1,29 +1,35 @@
-<div class="container">
+<div class="container my_info">
   <div class="row">
-    <div class="col-md-12">
       <h1 class="text-center">个人中心</h1>
-      <div class="col-md-4">
+      <div class="col-md-12">
+      <div class="col-md-4 text-center my_info_avatar">
         <% if current_user.avatar.present? %>
           <%= link_to image_tag(current_user.avatar.url,size: "200x200", :target => "_blank")%>
         <% else %>
           <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", size: "200x200", :target => "_blank")%>
         <% end %>
-        <p class="text-center">当前头像</p>
+        <p>当前头像</p>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 basic_info">
         <h3>基本信息</h3>
         <br>
 
         <%= simple_form_for [:account, @user] do |f| %>
-          <div class="my-info">
-            <span>邮箱：</span> <span><%= @user.email %></span><br>
-            <span>用户名：</span> <input type="text" name="user[username]" value="<%= @user.username %>"><br>
-            <%= f.file_field :avatar, label: "头像设置"%>
+          <div class="my_name">
+            <p><strong>邮箱：  </strong><%= @user.email %></p>
+            <br>
+            <p><strong>用户名：  </strong><input type="text" name="user[username]" value="<%= @user.username %>"></p>
           </div>
+          <div class="my-photo">
+            <p><strong>头像设置：</strong></p>
+            <%= f.file_field :avatar%>
+          </div>
+          <br>
           <div class="form-group">
-            <%= f.submit "更新", class: "btn btn-primary"%>
+            <%= f.submit "更新", class: "btn btn-default"%>
           </div>
+
         <% end %>
       </div>
     </div>

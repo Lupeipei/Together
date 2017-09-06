@@ -1,4 +1,45 @@
-<h1 class="text-center">活动列表</h1>
+<div class="container eventslist_page">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>活动列表</h3>
+      <ul class="clearfix">
+        <% @events.each do |event| %>
+        <div class="col-md-4">
+          <div class="eventList-item">
+            <p class="eventList-item-pic">
+                <%= link_to event_path(event) do %>
+                  <% if event.logo.present? %>
+                    <%= image_tag(event.logo.url, size: "250x250") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/250x250&text=No Pic") %>
+                  <% end %>
+              </p>
+                <p class="title"><%= event.title %></p>
+              <% end %>
+                <div class="details">
+                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.city %></div>
+                  <div class="favorite">
+                    <% if current_user %>
+                      <% if current_user.is_favorite_of?(event) %>
+                       <%= link_to(content_tag(:i," 已收藏", class: 'fa fa-heart' ),favorite_event_path(event,type: "unfavorite"), method: :put)%>
+                      <% else %>
+                        <%= link_to(content_tag(:i," 收藏", class: 'fa fa-heart-o' ),favorite_event_path(event,type: "favorite"), method: :put)%>
+                      <% end %>
+                   <% else %>
+                        <%= link_to(content_tag(:i," 收藏", class: 'fa fa-heart-o' ),favorite_event_path(event,type: "favorite"), method: :put)%>
+                  <% end %>
+                  </div>
+                </div>
+          </div>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- <h1 class="text-center">活动列表</h1>
 
 <div class="col-md-10 col-md-offset-1" style="margin-top: 20px;">
   <table class="table table-bordered">
@@ -36,4 +77,4 @@
       <% end %>
     </tbody>
   </table>
-</div>
+</div> -->
