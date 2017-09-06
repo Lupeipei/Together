@@ -57,7 +57,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 25, 19, 00),
   end_time: Time.local(2017, 10, 25, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lfh5cjnj31kw16o1kx.jpg")
+  logo: open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lfh5cjnj31kw16o1kx.jpg")
 )
 
 
@@ -77,7 +77,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 15, 19, 00),
   end_time: Time.local(2017, 10, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9wzt39a2j30sg0ix449.jpg")
+  logo: open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9wzt39a2j30sg0ix449.jpg")
 )
 
 # 户外2
@@ -96,7 +96,7 @@ Event.create!(
   start_time: Time.local(2017, 11, 15, 07, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lhd50vqj30ku0dwgpb.jpg")
+  logo: open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lhd50vqj30ku0dwgpb.jpg")
 )
 
 
@@ -113,7 +113,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 15, 19, 00),
   end_time: Time.local(2017, 10, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9lhciprpj30rs0g9q4f.jpg")
+  logo: open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9lhciprpj30rs0g9q4f.jpg")
 )
 
 # 约厨3
@@ -136,7 +136,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 10, 19, 00),
   end_time: Time.local(2017, 10, 10, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9li8mjq7j30rs0fn13q.jpg")
+  logo: open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9li8mjq7j30rs0fn13q.jpg")
 )
 
 Event.create!(
@@ -154,7 +154,7 @@ Event.create!(
   start_time: Time.local(2017, 11, 15, 10, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79gy1fj9li8zya9j30k00d9407.jpg")
+  logo: open("https://ws4.sinaimg.cn/large/006tNc79gy1fj9li8zya9j30k00d9407.jpg")
 )
 
 # 交友4
@@ -176,7 +176,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 15, 19, 00),
   end_time: Time.local(2017, 10, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9ljmpheqj30f108648v.jpg")
+  logo: open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9ljmpheqj30f108648v.jpg")
 )
 
 Event.create!(
@@ -201,7 +201,7 @@ Event.create!(
   start_time: Time.local(2017, 12, 15, 19, 00),
   end_time: Time.local(2017, 12, 15, 20, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lvg6cifj30xc0m8n37.jpg")
+  logo: open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lvg6cifj30xc0m8n37.jpg")
 )
 
 # 读书5
@@ -223,7 +223,7 @@ Event.create!(
   start_time: Time.local(2017, 11, 11, 19, 00),
   end_time: Time.local(2017, 11, 11, 21, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79ly1fj9lvxqgqej31kw0whtfy.jpg")
+  logo: open("https://ws1.sinaimg.cn/large/006tNc79ly1fj9lvxqgqej31kw0whtfy.jpg")
 )
 
 # 游戏6
@@ -242,7 +242,7 @@ Event.create!(
   start_time: Time.local(2017, 10, 10, 14, 00),
   end_time: Time.local(2017, 10, 10, 18, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  logo: open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
 )
 
 puts "Events are created"
