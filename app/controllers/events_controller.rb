@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:favorite, :new, :create]
+  before_action :validate_search_key, only: [:search]
 
   def index
     @events = Event.order("created_at DESC")
@@ -39,7 +40,7 @@ class EventsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Event.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.paginate(:page => params[:page], :per_page => 10)
+      @events = search_result.paginate(:page => params[:page], :per_page => 10)
     end
   end
 
@@ -51,7 +52,7 @@ class EventsController < ApplicationController
   end
 
   def search_criteria(query_string)
-    {:title_or_description_cont => query_string}
+    {:title_or_description_or_address_cont => query_string}
   end
 
   def event_params

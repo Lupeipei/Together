@@ -1,0 +1,31 @@
+<div class="eventlist-warp search-page">
+  <% if @events.present? %>
+  <h5 class="text-center collection search-count">已为您找到<%= @events.count %>个活动</h5>
+  <ul class="eventlist clearfix">
+    <div class="row">
+      <div class="col-md-12">
+        <% @events.each do |event| %>
+            <div class="col-md-2">
+              <p class="eventList-item-pic">
+                <%= link_to event_path(event) do %>
+                <% if event.logo.present? %>
+                  <%= image_tag(event.logo.url, size: "200x200")%>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=NO Pic")%>
+                <% end %>
+              <% end %>
+              </p><br>
+              <p class="eventList-item-title">
+                <%= link_to event_path(event) do %>
+                   <%= event.title %>
+                <% end %>
+              </p>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </ul>
+  <% else %>
+    <p style="margin-top:100px;">亲，没有搜索到相关活动，要不换个关键词试试？</p>
+  <% end %>
+</div>
