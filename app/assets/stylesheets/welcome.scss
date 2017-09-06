@@ -126,17 +126,22 @@
 /*-- 热卖商品部分 --*/
 .eventList-item {
   margin: 3em auto 2em;
+  border: 1px solid #f2f2f2;
+  overflow: hidden;
+  background: #fff;
 }
 
 .eventList-item-pic {
-  margin-bottom: 1.2em;
-  border-radius: 50%;
+  margin-bottom: 1em;
+  padding: 20px 18px 10px;
 }
-.eventList-item-title a {
+.eventList-item-title {
   text-align: center;
   font-size: 15px;
   color: #666;
+  margin: -10px 0px 10px;
 }
+
 /*-- 用户评价部分 --*/
 .landingpage-evaluation {
   height: 300px;

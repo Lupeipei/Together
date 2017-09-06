@@ -6,11 +6,9 @@
         <% else %>
           <%= image_tag("http://placehold.it/300x300&text=No Pic") %>
         <% end %>
-      <% end %>
-    </p><br>
-    <p class="eventList-item-title">
-      <%= link_to event_path(event) do %>
-         <%= event.title %>
-      <% end %>
     </p>
+    <div class="eventList-item-title">
+      <span><%= event.title %></span>
+    </div>
+    <% end %>
 </div>

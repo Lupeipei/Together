@@ -7,25 +7,34 @@
         <% @events.each do |event| %>
             <div class="col-md-2">
               <p class="eventList-item-pic">
-                <%= link_to event_path(event) do %>
-                <% if event.logo.present? %>
-                  <%= image_tag(event.logo.url, size: "200x200")%>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=NO Pic")%>
-                <% end %>
+                  <%= link_to event_path(event) do %>
+                    <% if event.logo.present? %>
+                      <%= image_tag(event.logo.url, size: "200x200") %>
+                    <% else %>
+                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                    <% end %>
+                </p>
+                <div class="eventList-item-title">
+                  <span><%= event.title %></span>
+                </div>
               <% end %>
-              </p><br>
-              <p class="eventList-item-title">
-                <%= link_to event_path(event) do %>
-                   <%= event.title %>
-                <% end %>
-              </p>
             </div>
         <% end %>
       </div>
     </div>
   </ul>
   <% else %>
-    <p style="margin-top:100px;">亲，没有搜索到相关活动，要不换个关键词试试？</p>
+  <div class="search_no_result">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-1">
+            <span class="sorry_cat"><%= image_tag("https://ws1.sinaimg.cn/large/006tNc79gy1fj9wd8n9wvj30eg0egdi2.jpg", size: "130x130")%></span>
+        </div>
+        <div class="col-md-7">
+          <p>亲，没有搜索到相关活动，要不换个关键词试试？</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
