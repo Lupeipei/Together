@@ -40,6 +40,8 @@ gem 'rails-i18n'
 gem 'select2-rails'
 gem 'mini_magick'
 gem 'rename'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
