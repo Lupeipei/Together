@@ -57,8 +57,8 @@ Event.create!(
   start_time: Time.local(2017, 10, 25, 19, 00),
   end_time: Time.local(2017, 10, 25, 22, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/103.jpg")
+  logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
+  # logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/103.jpg")
 
 )
 
