@@ -27,7 +27,7 @@
           </div>
           <br>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
               <% if !current_user %>
                 <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
               <% else %>
@@ -38,11 +38,11 @@
                 <% end %>
               <% end %>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
               <%= link_to("申请赴约", "#", class: "btn btn-success")%>
             </div>
-            <div class="col-md-4">
-              分享至
+            <div class="col-md-8">
+              分享至: <%= social_share_button_tag(@event.title, :allow_sites => %w(twitter facebook google_plus weibo qq douban wechat))%>
             </div>
           </div>
         </div>

@@ -18,6 +18,8 @@
 //= require bootstrap/modal
 //= require bootstrap-sprockets
 //= require select2
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .
 
 // 回到顶部按钮

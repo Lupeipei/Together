@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require social-share-button
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -175,4 +176,24 @@ margin-bottom: 2px;
 }
 .my-photo {
   margin-top: 10px;
+}
+
+//event show页面
+.event_info {
+  margin: 30px;
+}
+.TabBarBox {
+    border: 1px solid #dfdfdf;
+    margin-bottom: 30px;
+}
+
+.TabBarBox ul {
+    width: 100%;
+    position: relative;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: -8px;
+    border-bottom: 0;
 }
