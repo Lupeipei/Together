@@ -1,37 +1,75 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" style="margin-top: 10px;">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <% if @event.logo.present? %>
-          <%= link_to image_tag(@event.logo.url,size: "200x200", :target => "_blank")%>
+          <%= link_to image_tag(@event.logo.url,size: "300x300", :target => "_blank")%>
         <% else %>
-           <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", size: "200x200", :target => "_blank")%>
+           <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", :target => "_blank")%>
         <% end %>
       </div>
 
-      <div class="col-md-9">
-        <h1><%= @event.title %></h1>
-        <br>
-        <ul>
-          <li>开始时间：<%= @event.start_time %></li>
-          <li>结束时间：<%= @event.start_time %></li>
-          <li>地点：<%= @event.address %></li>
-          <li>主办：<%= @event.sponsor %></li>
-        </ul>
-        <p>活动介绍：<%= raw @event.description %></p>
-        <br>
-        <% if !current_user %>
-          <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
-        <% else %>
-          <% if current_user.is_favorite_of?(@event) %>
-            <%= link_to "取消收藏",favorite_event_path(@event,type: "unfavorite"), method: :put, class: "btn btn-default"%>
-          <% else %>
-            <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
-          <% end %>
-        <% end %>
-        <%= link_to("申请赴约", "#", class: "btn btn-success")%>
+      <div class="col-md-8">
+        <div class="row">
+          <h3><%= @event.title %></h3>
+          <br>
+          <div class="event-details">
+            <p><strong>开始时间：</strong><%= @event.start_time %></p>
+          </div>
+          <div class="event-details">
+            <p><strong>结束时间：</strong><%= @event.end_time %></p>
+          </div>
+          <div class="event-details">
+            <p><strong>地点：</strong><%= @event.address %></p>
+          </div>
+          <div class="event-details">
+            <p><strong>主办：</strong><%= @event.sponsor %></p>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <% if !current_user %>
+                <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
+              <% else %>
+                <% if current_user.is_favorite_of?(@event) %>
+                  <%= link_to "取消收藏",favorite_event_path(@event,type: "unfavorite"), method: :put, class: "btn btn-default"%>
+                <% else %>
+                  <%= link_to "添加收藏",favorite_event_path(@event,type: "favorite"), method: :put, class: "btn btn-default"%>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to("申请赴约", "#", class: "btn btn-success")%>
+            </div>
+            <div class="col-md-4">
+              分享至
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="event_info">
+      <div class="TabBarBox">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">活动详情</a></li>
+          <li><a href="#">评论区</a></li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab-left">
+          <div class="description">
+            <p><%= raw @event.description %></p>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab-right">
+          reviews
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
