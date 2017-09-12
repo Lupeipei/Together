@@ -42,7 +42,7 @@
               <%= link_to("申请赴约", "#", class: "btn btn-success")%>
             </div>
             <div class="col-md-8">
-              分享至: <%= social_share_button_tag(@event.title, :allow_sites => %w(twitter facebook google_plus weibo qq douban wechat))%>
+              <p>分享至: <%= social_share_button_tag(@event.title, :allow_sites => %w(twitter facebook google_plus weibo qq douban wechat))%></p>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
       <div class="TabBarBox">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#">活动详情</a></li>
-          <li><a href="#">评论区</a></li>
+          <li><a href="#">讨论区</a></li>
         </ul>
       </div>
       <div class="tab-content">
