@@ -20,6 +20,7 @@
 //= require select2
 //= require social-share-button
 //= require social-share-button/wechat
+//= require ckeditor/init
 //= require_tree .
 
 // 回到顶部按钮
