@@ -3,11 +3,13 @@
     <div class="col-md-10 col-md-offset-1">
       <h1>我要邀约</h1>
 
-
       <%= simple_form_for @event do |f|%>
-      <div class="form-group">
-        <%= f.label :"活动名称" %>
+      <div class="form-group <%= (f.object.errors[:title].any?)? "has-error" : "" %>">
+        <%= f.label :"活动名称", :class => "control-label" %>
         <%= f.text_field :title, :class => "form-control" %>
+        <% if f.object.errors[:title]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:title], "、")%></span>
+        <% end %>
       </div>
 
       <div class="btn-group" data-toggle="buttons">
@@ -15,13 +17,13 @@
         <br>
         <% Event::STATUS.each do |status| %>
           <label class="btn btn-default <%= (status == f.object.status)? 'active':'' %>">
-            <%= f.radio_button :status, status %>
+            <%= f.radio_button :status, status, :required => true %>
             <%= t(status, :scope => "event.status")%>
           </label>
         <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>">
         <%= f.label :logo %>
         <%= f.file_field :logo, :class => "form-control"%>
         <% if f.object.logo.present? %>
@@ -30,35 +32,55 @@
           </label>
           <%= link_to f.object.logo.filename, f.object.logo.url, :target => "_blank" %>
         <% end %>
+
+        <% if f.object.errors[:logo]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:logo], "、")%></span>
+        <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group <%= (f.object.errors[:description].any?)? "has-error" : "" %>">
         <%= f.label :"描述" %>
         <!-- <%= f.text_area :description, :class => "form-control" %> -->
         <%= f.cktext_area :description, ckeditor: { language: 'zh-CN', toolbar: 'mini' }%>
+
+        <% if f.object.errors[:description]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:description], "、")%></span>
+        <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
         <%= f.label :"城市" %>
-        <%= f.text_field :city, :class => "form-control" %>
+        <%= f.text_field :city, :class => "form-control"%>
+
+        <% if f.object.errors[:city]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:city], "、")%></span>
+        <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
         <%= f.label :"详细地址" %>
-        <%= f.text_field :address, :class => "form-control" %>
+        <%= f.text_field :address, :class => "form-control"%>
+
+        <% if f.object.errors[:address]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:address], "、")%></span>
+        <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group <%= (f.object.errors[:sponsor].any?)? "has-error" : "" %>">
         <%= f.label :"主办方" %>
-        <%= f.text_field :sponsor, :class => "form-control" %>
+        <%= f.text_field :sponsor, :class => "form-control", :required => true %>
+
+        <% if f.object.errors[:sponsor]%>
+          <span class="help-block"><%= safe_join(f.object.errors[:sponsor], "、")%></span>
+        <% end %>
       </div>
 
       <div class="form-group">
-        <%= f.association :category %>
+        <%= f.association :category, :required => true %>
       </div>
 
       <div class="form-group">
-        <%= f.input :limited_num, label: "人数限额" %>
+        <%= f.input :limited_num, label: "人数限额"%>
       </div>
 
       <div class="form-group">

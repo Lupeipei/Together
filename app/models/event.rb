@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :title, :description, :address, :start_time, :end_time, presence: true
+  validates :title, :logo, :status, :description, :start_time, :end_time, :city, :address, :sponsor,:limited_num, presence: true
 
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
