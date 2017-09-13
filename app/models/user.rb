@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :favorites
   has_many :favorite_events, through: :favorites, source: :event
+  has_many :reviews
 
   mount_uploader :avatar, AvatarUploader
   def admin?

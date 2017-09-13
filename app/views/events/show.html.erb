@@ -56,18 +56,59 @@
     <div class="event_info">
       <div class="TabBarBox">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#">活动详情</a></li>
-          <li><a href="#">讨论区</a></li>
+          <li class="active"><a data-toggle="tab" href="#tab-left">活动详情</a></li>
+          <li><a data-toggle="tab" href="#tab-right">讨论区</a></li>
         </ul>
       </div>
       <div class="tab-content">
-        <div class="tab-pane active" id="tab-left">
-          <div class="description">
-            <p><%= raw @event.description %></p>
+        <!-- 活动详情页面 -->
+        <div class="tab-pane fade active" id="tab-left">
+          <div class="event_details_description">
+            <p style="line-height:3em; "><%= raw @event.description %></p>
           </div>
         </div>
-        <div class="tab-pane" id="tab-right">
-          reviews
+        <!-- 活动讨论区 -->
+        <div class="tab-pane fade" id="tab-right">
+          <div class="event_reviews">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <%= render "reviews/form"%>
+                <hr>
+                <% if @reviews.blank? %>
+                  <p>该活动还没有人讨论，来侃几句吧？</p>
+                <% else %>
+                  <% @reviews.each do |review| %>
+                  <div class="reviews" style="text-align: left;">
+                    <ul>
+                      <div class="user_avatar" style="float: left;">
+                        <% if current_user.avatar.present? %>
+                          <%= image_tag(current_user.avatar.url, class: "review_avatar")%>
+                        <% else %>
+                          <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", class: "review_avatar")%>
+                        <% end %>
+                      </div>
+                    </ul>
+                      <div class="row">
+                        <!-- <% if current_user == review.user %>
+                         <%= link_to("删除", event_review_path(@event), method: :delete, data: {confirm: "Are you sure?"}, class: "pull-right")%>
+                        <% end %> -->
+                        <div class="col-md-9 review-user-info">
+                          <%= review.user.display_name %>
+                        </div>
+                        <div class="col-md-3">
+                          <%= review.created_at%>
+                        </div>
+                      </div>
+                      <div class="review-comment">
+                        <%= review.content %>
+                      </div>
+                  </div>
+                  <% end %>
+                <% end %>
+                <hr>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

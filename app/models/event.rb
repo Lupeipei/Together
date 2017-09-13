@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   mount_uploader :logo, EventlogoUploader
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
+  has_many :reviews
 
   # status of events
   STATUS = ["preparing", "processing", "over"]

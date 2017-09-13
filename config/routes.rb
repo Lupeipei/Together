@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #   end
   # end
   resources :events do
+    resources :reviews
     collection do
       get :search
     end
