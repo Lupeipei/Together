@@ -81,9 +81,8 @@
                   <div class="reviews" style="text-align: left;">
                     <ul>
                       <div class="user_avatar" style="float: left;">
-
-                        <% if review.user.reviews.present? %>
-                          <%= image_tag(review.user.avatar.url, class: "review_avatar")%>
+                        <% if review.user.avatar.present? %>
+                          <%= image_tag(review.user.avatar.thumb.url, class: "review_avatar")%>
                         <% else %>
                           <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", class: "review_avatar")%>
                         <% end %>

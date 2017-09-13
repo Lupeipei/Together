@@ -43,19 +43,6 @@ ActiveRecord::Schema.define(version: 20170913000255) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "jobs", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "wage_upper_bound"
-    t.integer  "wage_lower_bound"
-    t.string   "city"
-    t.string   "company"
-    t.string   "contact_email"
-    t.boolean  "is_hidden"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "resumes", force: :cascade do |t|
     t.integer  "job_id"
     t.integer  "user_id"
