@@ -78,7 +78,7 @@
                   <p>该活动还没有人讨论，来侃几句吧？</p>
                 <% else %>
                   <% @reviews.each do |review| %>
-                  <div class="reviews" style="text-align: left;">
+                  <div id="reivew-<%= review.id %>" class="reviews" style="text-align: left;">
                     <ul>
                       <div class="user_avatar" style="float: left;">
                         <% if review.user.avatar.present? %>
@@ -102,6 +102,11 @@
                       <div class="review-comment">
                         <%= review.content %>
                       </div>
+                      <% if current_user == review.user %>
+                      <div class="pull-right">
+                        <%= link_to("delete", event_review_path(review.event,review), method: :delete, :remote => true)%>
+                      </div>
+                    <% end %>
                   </div>
                   <% end %>
                 <% end %>
