@@ -32,22 +32,11 @@
             </div>
 
             <div class="col-md-2" id="favorite-<%= @event.id %>">
-              <% if current_user %>
-                <% if current_user.is_favorite_of?(@event) %>
-                 <%= link_to(content_tag(:i," ", class: 'fa fa-star' ),favorite_event_path(@event,type: "unfavorite"), method: :put, :remote => true)%>
-                 <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
-                <% else %>
-                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%>
-                  <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
-                <% end %>
-              <% else %>
-                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%>
-                  <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
-              <% end %>
+              <%= render :partial => "favorite", :locals => {:event => @event }%>
             </div>
 
-            <div class="col-md-2">
-
+            <div class="col-md-2" id="like-<%= @event.id %>">
+              <%= render :partial => "like", :locals => {:event => @event }%>
             </div>
 
             <div class="col-md-6">

@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :favorite_events, through: :favorites, source: :event
   has_many :reviews
 
+  has_many :likes, :dependent => :destroy
+  has_many :liked_events, :through => :likes, :source => :event
+
   mount_uploader :avatar, AvatarUploader
   def admin?
     self.is_admin

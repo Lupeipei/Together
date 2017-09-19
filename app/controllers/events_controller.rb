@@ -37,6 +37,20 @@ class EventsController < ApplicationController
     # redirect_to :back
   end
 
+  def like
+    @event = Event.find(params[:id])
+    type = params[:type]
+    if type == "like"
+      unless @event.find_like(current_user)
+        Like.create(:user => current_user, :event => @event)
+      end
+    else type == "unlike"
+      @like = @event.find_like(current_user)
+      @like.destroy
+    end
+    # redirect_to :back
+  end
+
 
   def search
     if @query_string.present?

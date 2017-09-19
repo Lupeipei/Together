@@ -8,6 +8,13 @@ class Event < ApplicationRecord
   has_many :fans, through: :favorites, source: :user
   has_many :reviews
 
+  has_many :likes, :dependent => :destroy
+  has_many :liked_users, :through => :likes, :source => :user
+
+  def find_like(user)
+    self.likes.where(:user_id => user.id).first
+  end
+
   # status of events
   STATUS = ["preparing", "processing", "over"]
   validates_inclusion_of :status, :in => STATUS

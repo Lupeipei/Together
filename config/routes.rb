@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       get :search
     end
     put :favorite, on: :member
+    put :like, on: :member
   end
 
   namespace :admin do

@@ -1,0 +1,15 @@
+<% if current_user %>
+  <% if event.find_like(current_user) %>
+    <%= link_to like_event_path(event, type: "unlike"), method: :put, :remote => true do%>
+    <i class="fa fa-thumbs-up fa-1x"> 赞 (<span  id="like-counts-<%= event.id %>"><%= event.likes.count%></span>)</i>
+    <% end %>
+  <% else %>
+    <%= link_to like_event_path(event, type: "like"), method: :put, :remote => true do%>
+    <i class="fa fa-thumbs-o-up fa-1x"> 赞 (<span id="like-counts-<%= event.id %>"><%= event.likes.count%></span>)</i>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to like_event_path(event, type: "like"), method: :put, :remote => true do%>
+  <i class="fa fa-thumbs-o-up fa-1x"> 赞 (<span id="like-counts-<%= event.id %>"><%= event.likes.count%></span>)</i>
+  <% end %>
+<% end %>
