@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     else type == "unfavorite"
       current_user.unfavorite!(@event)
     end
-    redirect_to :back
+    # redirect_to :back
   end
 
 

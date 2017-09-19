@@ -18,16 +18,8 @@
               <% end %>
                 <div class="details">
                   <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.city %></div>
-                  <div class="favorite">
-                    <% if current_user %>
-                      <% if current_user.is_favorite_of?(event) %>
-                       <%= link_to(content_tag(:i," 已收藏", class: 'fa fa-heart' ),favorite_event_path(event,type: "unfavorite"), method: :put)%>
-                      <% else %>
-                        <%= link_to(content_tag(:i," 收藏", class: 'fa fa-heart-o' ),favorite_event_path(event,type: "favorite"), method: :put)%>
-                      <% end %>
-                   <% else %>
-                        <%= link_to(content_tag(:i," 收藏", class: 'fa fa-heart-o' ),favorite_event_path(event,type: "favorite"), method: :put)%>
-                  <% end %>
+                  <div id="favorite-<%= event.id %>">
+                    <%= render :partial => "favorite", :locals => {:event => event }%>
                   </div>
                 </div>
           </div>
