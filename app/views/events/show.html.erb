@@ -30,6 +30,7 @@
             <div class="col-md-2">
               <%= link_to("申请赴约", "#", class: "btn btn-success event-apply")%>
             </div>
+
             <div class="col-md-2">
               <% if current_user %>
                 <% if current_user.is_favorite_of?(@event) %>
@@ -41,9 +42,13 @@
                   <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%><%= @event.favorites.count%>
               <% end %>
             </div>
+
             <div class="col-md-2">
-              <%= link_to("点赞",'#')%>
+              <% if @event.favorites.any? %>
+                <%= @event.fans.map{|u| u.display_name}.join(",")%>已收藏
+              <% end %>
             </div>
+
             <div class="col-md-6">
               <p>分享至: <%= social_share_button_tag(@event.title, :allow_sites => %w(twitter facebook google_plus weibo qq douban wechat))%></p>
             </div>
