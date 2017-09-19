@@ -31,22 +31,23 @@
               <%= link_to("申请赴约", "#", class: "btn btn-success event-apply")%>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2" id="favorite-<%= @event.id %>">
               <% if current_user %>
                 <% if current_user.is_favorite_of?(@event) %>
-                 <%= link_to(content_tag(:i," ", class: 'fa fa-star' ),favorite_event_path(@event,type: "unfavorite"), method: :put, :remote => true)%><%= @event.favorites.count%>
+                 <%= link_to(content_tag(:i," ", class: 'fa fa-star' ),favorite_event_path(@event,type: "unfavorite"), method: :put, :remote => true)%>
+                 <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
                 <% else %>
-                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%><%= @event.favorites.count%>
+                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%>
+                  <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
                 <% end %>
               <% else %>
-                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%><%= @event.favorites.count%>
+                  <%= link_to(content_tag(:i," ", class: 'fa fa-star-o' ),favorite_event_path(@event,type: "favorite"), method: :put, :remote => true)%>
+                  <span id="favorite-counts-<%= @event.id %>"><%= @event.favorites.count%></span>
               <% end %>
             </div>
 
             <div class="col-md-2">
-              <% if @event.favorites.any? %>
-                <%= @event.fans.map{|u| u.display_name}.join(",")%>已收藏
-              <% end %>
+
             </div>
 
             <div class="col-md-6">

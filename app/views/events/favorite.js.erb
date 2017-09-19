@@ -1,2 +1,3 @@
 str = "<%=j render :partial => "favorite", :locals => {:event => @event } %>";
 $("#favorite-<%= @event.id %>").html(str);
+$("#favorite-counts-<%= @event.id %>").html("<%= @event.favorites.count %>");
