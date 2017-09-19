@@ -1,0 +1,27 @@
+<div id="reivew-<%= review.id %>" class="reviews" style="text-align: left;">
+  <ul>
+    <div class="user_avatar" style="float: left;">
+      <% if review.user.avatar.present? %>
+        <%= image_tag(review.user.avatar.thumb.url, class: "review_avatar")%>
+      <% else %>
+        <%= image_tag("https://ws4.sinaimg.cn/large/006tNc79gy1fj8fv5d1tdj30zk0npdig.jpg", class: "review_avatar")%>
+      <% end %>
+    </div>
+  </ul>
+    <div class="row">
+      <div class="col-md-9 review-user-info">
+        <%= review.user.display_name %>
+      </div>
+      <div class="col-md-3">
+        <%= review.created_at %>
+      </div>
+    </div>
+    <div class="review-comment">
+      <%= review.content %>
+    </div>
+    <% if current_user == review.user %>
+    <div class="pull-right">
+      <%= link_to("delete", event_review_path(review.event,review), method: :delete, :remote => true)%>
+    </div>
+  <% end %>
+</div>

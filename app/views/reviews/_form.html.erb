@@ -1,7 +1,7 @@
 <div class="contain">
   <div class="row" style=" margin-top: 50px;">
     <div class="col-md-12">
-      <%= simple_form_for [@event, @event.reviews.build ] do |f| %>
+      <%= simple_form_for [@event, @event.reviews.build ], :remote => true do |f| %>
         <div class="form-group">
           <%= f.input :content, label: "吐糟或者提问，请随意", input_html: { class: "form-control"}%>
         </div>
