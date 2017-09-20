@@ -31,12 +31,12 @@ puts "users are created"
 # Category部分
 Category.delete_all
 
-Category.create!(name: "音乐")
-Category.create!(name: "户外")
-Category.create!(name: "约厨")
-Category.create!(name: "交友")
-Category.create!(name: "读书")
-Category.create!(name: "游戏")
+Category.create!(id:1, name: "音乐")
+Category.create!(id:2, name: "户外")
+Category.create!(id:3, name: "约厨")
+Category.create!(id:4, name: "交友")
+Category.create!(id:5, name: "读书")
+Category.create!(id:6, name: "游戏")
 
 # Event
 Event.delete_all

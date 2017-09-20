@@ -3,13 +3,25 @@
     <div class="col-md-12">
       <!-- 筛选区域 -->
       <div class="submenu">
-        <div class="btn-group">
+        <span><i class="fa fa-home fa-lg"></i> 兴趣: </span>
+        <div class="btn-group" style="margin-left: 20px;">
           <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:category].blank?)? "active" : ""}"%>
           <% Category.all.each do |c| %>
             <%= link_to c.name, events_path(category: c), :class => "btn btn-default btn-group #{(params[:category] == c)? "active" : "" }"%>
           <% end %>
         </div>
       </div>
+
+      <!-- <div class="submenu">
+        <span><i class="fa fa-map-marker fa-lg"></i> 城市: </span>
+        <div class="btn-group" style="margin-left: 20px;">
+          <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:category].blank?)? "active" : ""}"%>
+          <% Category.all.each do |c| %>
+            <%= link_to c.name, events_path(category: c), :class => "btn btn-default btn-group #{(params[:category] == c)? "active" : "" }"%>
+          <% end %>
+        </div>
+      </div> -->
+
       <!-- 活动列表 -->
       <ul class="clearfix">
         <% @events.each do |event| %>

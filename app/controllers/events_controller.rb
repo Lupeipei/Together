@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
     if params[:category].present?
+      # @category_id = Category.find_by(name: params[:category]).id
       @events = Event.by_category(params[:category]).order("created_at DESC")
     else
       @events = Event.order("created_at DESC")
