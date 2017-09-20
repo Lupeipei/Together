@@ -3,7 +3,11 @@ class EventsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
-    @events = Event.order("created_at DESC")
+    if params[:category].present?
+      @events = Event.by_category(params[:category]).order("created_at DESC")
+    else
+      @events = Event.order("created_at DESC")
+    end
   end
 
   def show

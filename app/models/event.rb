@@ -18,4 +18,6 @@ class Event < ApplicationRecord
   # status of events
   STATUS = ["preparing", "processing", "over"]
   validates_inclusion_of :status, :in => STATUS
+
+  scope :by_category, ->(c){where( :category => c )}
 end

@@ -1,7 +1,16 @@
 <div class="container eventslist_page">
   <div class="row">
     <div class="col-md-12">
-      <h3>活动列表</h3>
+      <!-- 筛选区域 -->
+      <div class="submenu">
+        <div class="btn-group">
+          <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:category].blank?)? "active" : ""}"%>
+          <% Category.all.each do |c| %>
+            <%= link_to c.name, events_path(category: c), :class => "btn btn-default btn-group #{(params[:category] == c)? "active" : "" }"%>
+          <% end %>
+        </div>
+      </div>
+      <!-- 活动列表 -->
       <ul class="clearfix">
         <% @events.each do |event| %>
         <div class="col-md-4">
