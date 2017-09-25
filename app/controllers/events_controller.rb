@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:favorite, :new, :create]
+  before_action :authenticate_user!, only: [:favorite, :like, :new, :create]
   before_action :validate_search_key, only: [:search]
 
   def index
