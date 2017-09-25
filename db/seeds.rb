@@ -11,6 +11,7 @@ User.delete_all
 
 u = User.new
 
+u.id = 1
 u.email = "admin@123.com"
 u.username = "Admin"
 u.password = "123456"
@@ -22,7 +23,7 @@ puts "Admin is created"
 # Users
 
 users = []
-10.times do |i|
+50.times do |i|
   users << User.create!(:email => Faker::Internet.email, :password => "123456", :username => Faker::Name.name)
 end
 
@@ -40,9 +41,12 @@ Category.create!(id:6, name: "游戏")
 
 # Event
 Event.delete_all
+
+events = []
+
 # 音乐1
 
-Event.create!(
+events << Event.create!(
   id: 1,
   category_id: 1,
   user_id: users.sample.id,
@@ -64,7 +68,7 @@ Event.create!(
 )
 
 
-Event.create!(
+events << Event.create!(
   id: 2,
   category_id: 1,
   user_id: users.sample.id,
@@ -85,7 +89,7 @@ Event.create!(
 )
 
 # 户外2
-Event.create!(
+events << Event.create!(
   id: 3,
   category_id: 2,
   user_id: users.sample.id,
@@ -105,7 +109,7 @@ Event.create!(
 )
 
 
-Event.create!(
+events << Event.create!(
   id: 4,
   category_id: 2,
   user_id: users.sample.id,
@@ -124,7 +128,7 @@ Event.create!(
 
 # 约厨3
 
-Event.create!(
+events << Event.create!(
   id: 5,
   category_id: 3,
   user_id: users.sample.id,
@@ -146,7 +150,7 @@ Event.create!(
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/noddles.jpg")
 )
 
-Event.create!(
+events << Event.create!(
   id: 6,
   category_id: 3,
   user_id: users.sample.id,
@@ -167,7 +171,7 @@ Event.create!(
 
 # 交友4
 
-Event.create!(
+events << Event.create!(
   id: 7,
   category_id: 4,
   user_id: users.sample.id,
@@ -188,7 +192,7 @@ Event.create!(
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/101.png")
 )
 
-Event.create!(
+events << Event.create!(
   id: 8,
   category_id: 4,
   user_id: users.sample.id,
@@ -216,7 +220,7 @@ Event.create!(
 
 # 读书5
 
-Event.create!(
+events << Event.create!(
   id: 9,
   category_id: 5,
   user_id: users.sample.id,
@@ -239,7 +243,7 @@ Event.create!(
 
 # 游戏6
 
-Event.create!(
+events << Event.create!(
   id: 10,
   category_id: 6,
   user_id: users.sample.id,
@@ -258,3 +262,27 @@ Event.create!(
 )
 
 puts "Events are created"
+
+# 收藏
+
+30.times do |i|
+  Like.create!(user_id: users.sample.id, event_id: events.sample.id)
+end
+
+puts "Likes are created"
+
+# 点赞
+
+20.times do |i|
+  Favorite.create!(user_id: users.sample.id, event_id: events.sample.id)
+end
+
+puts "Favorites are created"
+
+# review
+Review.delete_all
+
+events.each do |e|
+  Review.create!(user_id: 1, event_id: e.id, content: ["I like it","it is so cool","不得不点赞的说"].sample)
+end
+puts "Reviews are created"
