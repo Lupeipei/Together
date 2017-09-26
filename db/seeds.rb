@@ -53,7 +53,22 @@ events << Event.create!(
   title: "空体丨周五晚独立音乐分享会",
   description: "如果要把世界填充满的话，用音乐和食物，就够了。<br>
   鼓手，吉他手，键盘手，民谣歌手，原创音乐人……<br>
-  来这里，听他们的梦想与坚持。",
+  来这里，听他们的梦想与坚持。<br>
+  【本期音乐人介绍】<br>
+  第一组嘉宾：刘潜<br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79ly1fjx56oifbzj30hs0bvmxd.jpg\"><br>
+  独立音乐人/摄影师/旅行家/程序员/公务员…我们叫他：斜杠青年。<br>
+  一年时间游历了10个国家，50座城市，100个地域，我们叫他：旅行先生。<br>
+  他是胡子大叔-刘潜。<br>
+  <br>
+  第二位嘉宾：高宇婧<br>
+  <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79ly1fjx56o5964j30rs0iidh0.jpg\"><br>
+  高个子宇宙女青年，她向我们介绍自己时说道，高瘦<br>
+  她的故事关于城市，关于生活点滴，她说，音乐给了她发现世界的另一双眼睛。<br>
+  对于音乐，他们说：<br>
+  每个人都是一个独立的个体，我们一直在想，什么样的形式，才能完美的表达每一个独立的灵魂和生活？<br>
+  音乐给了我们答案，不论未来我们如何改变，始终会坚持全力以赴的去演绎好每一个音符。<br>
+  ",
   city: "深圳",
   address: "广东深圳空体新媒体实验室虚拟大学园R3-A栋1楼",
   sponsor: "空体",
@@ -76,7 +91,10 @@ events << Event.create!(
   description: "【只要2小时】从零基础到自弹自唱—达成， <br>
                 认识更多有趣的朋友， <br>
                 感受尤克里里的独特魅力， <br>
-                收获更多不一样的欢乐体验。",
+                收获更多不一样的欢乐体验。<br>
+                <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79ly1fjx60yj959j30rs0kugoz.jpg\"><br>
+                <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79ly1fjx60xs3moj30rs0kun0d.jpg\"><br>
+                <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79ly1fjx60x8jk1j30rs0ku3ze.jpg\"><br>",
   city: "广州",
   address: "广东广州海珠区昌岗中路211-2号信和苑2栋1502",
   sponsor: "追梦音乐工作室",
@@ -96,7 +114,9 @@ events << Event.create!(
   title: "重逢箭扣长城，东线穿越",
   description: "活动线路：渔场—箭扣—小布达拉—正北楼—牛角边—慕田峪—营北沟；<br>
                 活动强度：全程8KM左右，上升下降均约900米，<br>
-                集合时间：惠新西街北口B口，早7点20分",
+                集合时间：惠新西街北口B口，早7点20分,
+                <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79ly1fjx68fuza5j30rs0fmwfy.jpg\"><br>
+                <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx68f90p7j30ku0dz7iu.jpg\"><br>",
   city: "北京",
   address: "北京怀柔箭扣长城",
   sponsor: "东岸户外",
@@ -114,7 +134,12 @@ events << Event.create!(
   category_id: 2,
   user_id: users.sample.id,
   title: "GDPMS东西冲露营+穿越 | 徒步中国最美海岸线",
-  description: "东西冲海岸线被《国家地理杂志》评为中国最美的十大徒路线之一。东西冲海岸线是深圳最美丽、最经典的海岸线徒步线路：屏山傍海，山岳纵横，海岸线漫长，沙滩、岛屿、礁石、海蚀岩、洞、桥、柱等海积海蚀地貌发育齐全，给你完美的穿越体验！",
+  description: "东西冲海岸线被《国家地理杂志》评为中国最美的十大徒路线之一。东西冲海岸线是深圳最美丽、最经典的海岸线徒步线路：屏山傍海，山岳纵横，海岸线漫长，沙滩、岛屿、礁石、海蚀岩、洞、桥、柱等海积海蚀地貌发育齐全，给你完美的穿越体验！<br>
+  <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6cbotpuj30rs0f5gnw.jpg\"><br>
+  <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjx6ca47abj30rs0e3gmy.jpg\"><br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c986rxj30p00ew7a3.jpg\"><br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c7kbb5j30p00gotin.jpg\"><br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c6dmakj30m80dlqbl.jpg\"><br>",
   city: "广州",
   address: "广东广州南澳镇西冲村",
   sponsor: "小来子",
@@ -138,7 +163,8 @@ events << Event.create!(
                 你可以是很爱吃泡面的吃货<br>
                 游侠客帮你架起与泡面的友谊之桥<br>
                 你也可以是很爱凑热闹的XX群众<br>
-                游侠客【泡面食堂】最不缺的就是热闹！",
+                游侠客【泡面食堂】最不缺的就是热闹！
+                <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6fujx1lj30rs0kt7gu.jpg\"><br>",
   city: "杭州",
   address: "浙江杭州游侠客民宿",
   sponsor: "游侠客",
@@ -157,7 +183,9 @@ events << Event.create!(
   title: "心灵厨房",
   description: "唯美食与爱不可辜负,<br>
                 而一饭一蔬，皆是爱意,<br>
-                所以，这里是一个关于食物和心理学的课程",
+                所以，这里是一个关于食物和心理学的课程.<br>
+                <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79gy1fjx6j2jxljj30xc0r9x2m.jpg\" style=\"width: 960px;\"><br>
+                <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjx6iwpk4yj30qo0qoaru.jpg\"><br>",
   city: "西安",
   address: "陕西西安碑林区长安北路皇族雅苑别墅",
   sponsor: "卷毛银时",
@@ -177,16 +205,16 @@ events << Event.create!(
   user_id: users.sample.id,
   title: "【无意义大赛】全宇宙最无聊的比赛，太扯淡了!",
   description: "赛事介绍：<br>
-  1、捏泡泡大赛：捏泡泡才能满足的叫手感；<br>
-   2、给陌生人打电话：谁聊最长谁赢啊; <br>
-   3、吐豆子大赛：听说射程好的都在这……<br>
-   关于这样的扯淡游戏，我们还准备了十几个，想不想来嘛？",
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6mvmai7j30rs2jvgzd.jpg\"><br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6mtnd0dj30rs2jvwog.jpg\"><br>",
   city: "杭州",
   address: "浙江杭州运河大兜路146号游侠客民宿",
   sponsor: "游侠客",
   limited_num: 60,
-  start_time: Time.local(2017, 10, 15, 19, 00),
-  end_time: Time.local(2017, 10, 15, 22, 00) ,
+  start_time: Time.local(2017, 8, 20, 10, 00),
+  end_time: Time.local(2017, 8, 20, 12, 00) ,
+  # start_time: Time.local(2017, 08, 20, 19, 00),
+  # end_time: Time.local(2017, 08, 20, 22, 00),
   status: ["preparing","processing"].sample,
   # logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9ljmpheqj30f108648v.jpg")
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/101.png")
@@ -206,7 +234,10 @@ events << Event.create!(
                 我们不仅有国内外大师云集的艺术论坛交流<br>
                 还有集万千糕点、酒水于一身的交流酒会<br>
                 欢迎各种视觉噪音<br>
-                让视觉也躁起来",
+                让视觉也躁起来.<br>
+                <br>
+                <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6og7sdmj30do0kd78e.jpg\"><br>
+                <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6ofpac2j30qo0i2tfd.jpg\"><br>",
   city: "深圳",
   address: "深圳南山大冲国际中心5号楼6楼CD单元",
   sponsor: "ACG国际艺术教育",
@@ -229,7 +260,8 @@ events << Event.create!(
                 朗读，是古已有之的音乐。快慢行柔、抑扬顿挫，皆成乐章。<br>
                 关闭其他感官，耳朵借我，感受声波经空气带来的按摩。<br>
                 放下一切评判，把心打开，体会平凡文字的撩拨。<br>
-                带上喜欢的文字和你的故事，沉浸在9月的光阴里、情感的交融中。",
+                带上喜欢的文字和你的故事，沉浸在9月的光阴里、情感的交融中。<br>
+                <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjx6uscfjlj30fe0axweq.jpg\"><br>",
   city: "上海",
   address: "上海静安芷江西路151号 文化中心 4楼多功能厅",
   sponsor: "书虫部落",
@@ -248,8 +280,9 @@ events << Event.create!(
   category_id: 6,
   user_id: users.sample.id,
   title: "周末拒绝宅，一起狼人杀吧",
-  description: "一局狼人杀会让你爱上桌游, 也会使你深刻体会快乐真的会让时间变得匆匆<br>
-  加入我们，一起玩耍吧",
+  description: "一局狼人杀会让你爱上桌游, 也会使你深刻体会快乐真的会让时间变得匆匆.<br>
+  加入我们，一起玩耍吧.<br>
+  <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx7612s7sj30f00a0q3m.jpg\"><br>",
   city: "北京",
   address: "北京海淀区避风塘",
   sponsor: "殽赦",
