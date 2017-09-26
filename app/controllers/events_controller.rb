@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
+  before_action :check_user, only: [:favorite, :like]
   before_action :authenticate_user!, only: [:favorite, :like, :new, :create]
   before_action :validate_search_key, only: [:search]
+
 
   def index
     if params[:category].present?
@@ -77,6 +79,11 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :logo, :remove_logo,:status,:description, :start_time, :end_time, :city, :address, :sponsor,:limited_num,:category_id)
+  end
+
+  def check_user
+    return if user_signed_in?
+    redirect_to new_user_session_path, error: '请先登录'
   end
 
 end

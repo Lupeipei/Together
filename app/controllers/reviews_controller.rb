@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :check_user
   before_action :authenticate_user!
 
   def new
@@ -12,7 +13,6 @@ class ReviewsController < ApplicationController
     @review.event = @event
     @review.user = current_user
     @review.save
-    # redirect_to event_path(@event), notice: "评论成功"
   end
 
   def destroy
@@ -26,6 +26,11 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content)
+  end
+
+  def check_user
+    return if user_signed_in?
+    redirect_to new_user_session_path, error: '请先登录'
   end
 
 end

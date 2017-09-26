@@ -1,13 +1,7 @@
-<% if current_user %>
-  <% if current_user.is_favorite_of?(event) %>
+<% if current_user && current_user.is_favorite_of?(event) %>
     <%= link_to favorite_event_path(event,type: "unfavorite"), method: :put, :remote => true do %>
     <i class="fa fa-star"> 已收藏 (<span id="favorite-counts-<%= event.id %>"><%= event.favorites.count%></span>)</i>
     <% end %>
-  <% else %>
-    <%= link_to favorite_event_path(event,type: "favorite"), method: :put, :remote => true do %>
-    <i class="fa fa-star-o"> 收藏 (<span id="favorite-counts-<%= event.id %>"><%= event.favorites.count%></span>)</i>
-    <% end %>
-  <% end %>
 <% else %>
     <%= link_to favorite_event_path(event,type: "favorite"), method: :put, :remote => true do %>
     <i class="fa fa-star-o"> 收藏 (<span id="favorite-counts-<%= event.id %>"><%= event.favorites.count%></span>)</i>
