@@ -269,12 +269,15 @@ events << Event.create!(
 
 events << Event.create!(
   id: 9,
-  category_id: 5,
+  category_id: 4,
   user_id: users.sample.id,
   title: "梦想花艺课堂之居家桌花",
-  description: "一局狼人杀会让你爱上桌游, 也会使你深刻体会快乐真的会让时间变得匆匆.<br>
-  加入我们，一起玩耍吧.<br>
-  <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx7612s7sj30f00a0q3m.jpg\"><br>",
+  description: "
+  <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjyc02qmpej30ku0gwdgi.jpg\"><br>
+  <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjyc021mxej30kr0gxmyw.jpg\"><br>
+  <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjyc00jrw7j30ku0cbdgo.jpg\"><br>
+  <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjybzztmeuj30kt0c7wfh.jpg\"><br>
+  <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjybzyttz6j30ky0c6my4.jpg\"><br>",
   province: "510000",
   city: "510100",
   address: "成都二环路东二段508号光谷创业咖啡一楼咖啡厅",
@@ -284,7 +287,7 @@ events << Event.create!(
   end_time: Time.local(2017, 12, 10, 18, 00) ,
   status: ["preparing","processing"].sample,
   # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/601.jpeg")
+  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/flower.jpg")
 )
 
 # 读书5
