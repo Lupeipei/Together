@@ -46,6 +46,7 @@ gem 'figaro'
 gem 'social-share-button'
 gem 'ckeditor'
 gem 'china_city'
+gem 'bootstrap-datepicker-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

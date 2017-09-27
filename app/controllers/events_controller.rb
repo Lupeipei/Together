@@ -5,13 +5,19 @@ class EventsController < ApplicationController
 
 
   def index
+    @events = Event.order("created_at DESC")
     if params[:category].present?
-      # @category_id = Category.find_by(name: params[:category]).id
-      @events = Event.by_category(params[:category]).order("created_at DESC")
-    elsif params[:city].present?
-      @events = Event.by_city(params[:city]).order("created_at DESC")
-    else
-      @events = Event.order("created_at DESC")
+      @events = @events.by_category(params[:category]).order("created_at DESC")
+    end
+    if params[:city].present?
+      @events = @events.by_city(params[:city]).order("created_at DESC")
+    end
+    if params[:start_on].present?
+      @events = @events.where("start_time >= ?", Date.parse(params[:start_on]).beginning_of_day)
+    end
+
+    if params[:end_on].present?
+      @events = @events.where("end_time <= ?", Date.parse(params[:end_on]).end_of_day)
     end
   end
 

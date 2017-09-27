@@ -22,6 +22,8 @@
 //= require social-share-button/wechat
 //= require ckeditor/init
 //= require 'china_city/jquery.china_city'
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
 //= require_tree .
 
 // 回到顶部按钮

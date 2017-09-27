@@ -267,10 +267,30 @@ events << Event.create!(
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/102.jpeg")
 )
 
+events << Event.create!(
+  id: 9,
+  category_id: 5,
+  user_id: users.sample.id,
+  title: "梦想花艺课堂之居家桌花",
+  description: "一局狼人杀会让你爱上桌游, 也会使你深刻体会快乐真的会让时间变得匆匆.<br>
+  加入我们，一起玩耍吧.<br>
+  <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx7612s7sj30f00a0q3m.jpg\"><br>",
+  province: "510000",
+  city: "510100",
+  address: "成都二环路东二段508号光谷创业咖啡一楼咖啡厅",
+  sponsor: "光谷创业咖啡",
+  limited_num: 10,
+  start_time: Time.local(2017, 12, 10, 14, 00),
+  end_time: Time.local(2017, 12, 10, 18, 00) ,
+  status: ["preparing","processing"].sample,
+  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/601.jpeg")
+)
+
 # 读书5
 
 events << Event.create!(
-  id: 9,
+  id: 10,
   category_id: 5,
   user_id: users.sample.id,
   title: "光阴读书会 | 朗读场",
@@ -295,7 +315,7 @@ events << Event.create!(
 # 游戏6
 
 events << Event.create!(
-  id: 10,
+  id: 11,
   category_id: 6,
   user_id: users.sample.id,
   title: "周末拒绝宅，一起狼人杀吧",

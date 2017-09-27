@@ -25,13 +25,13 @@
       </div>
  <!-- 活动时间 -->
       <div class="submenu">
-        <span><i class="fa fa-calendar fa-lg"></i> 时间: </span>
-        <div class="btn-group" style="margin-left: 20px;">
-          <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:city].blank?)? "active" : ""}"%>
-          <% City.all.each do |c| %>
-            <%= link_to ChinaCity.get(c.city).split("市").first, events_path(city: c.city), :class => "btn btn-default btn-group #{(params[:city] == c.city)? "active" : "" }"%>
-          <% end %>
-        </div>
+        <%= form_tag events_path, :method => :get do %>
+          <span><i class="fa fa-calendar fa-lg"></i> 时间: </span>
+          <div class="form-group" style="margin-left: 80px; margin-top: -20px;">
+            <%= text_field_tag :start_on, params[:start_on]%> ~  <%= text_field_tag :end_on, params[:end_on]%>
+            <%= submit_tag "确认", :class => "btn btn-default"%>
+          </div>
+        <% end %>
       </div>
 
       <!-- 活动列表 -->
@@ -62,3 +62,9 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  $("#start_on").datepicker({format: "yyyy-mm-dd", language: "<%= I18n.locale %>"});
+  $("#end_on").datepicker({format: "yyyy-mm-dd", language: "<%= I18n.locale %>"})
+</script>
