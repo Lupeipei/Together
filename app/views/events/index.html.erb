@@ -2,12 +2,34 @@
   <div class="row">
     <div class="col-md-12">
       <!-- 筛选区域 -->
-      <div class="submenu">
+
+      <!-- 兴趣 -->
+      <div class="submenu" style="margin-bottom: 3px;">
         <span><i class="fa fa-home fa-lg"></i> 兴趣: </span>
         <div class="btn-group" style="margin-left: 20px;">
           <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:category].blank?)? "active" : ""}"%>
           <% Category.all.each do |c| %>
             <%= link_to c.name, events_path(category: c), :class => "btn btn-default btn-group #{(params[:category] == c)? "active" : "" }"%>
+          <% end %>
+        </div>
+      </div>
+      <!-- 城市 -->
+      <div class="submenu" style="margin-bottom: 3px;">
+        <span><i class="fa fa-paper-plane fa-lg"></i> 城市: </span>
+        <div class="btn-group" style="margin-left: 20px;">
+          <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:city].blank?)? "active" : ""}"%>
+          <% City.all.each do |c| %>
+            <%= link_to ChinaCity.get(c.city).split("市").first, events_path(city: c.city), :class => "btn btn-default btn-group #{(params[:city] == c.city)? "active" : "" }"%>
+          <% end %>
+        </div>
+      </div>
+ <!-- 活动时间 -->
+      <div class="submenu">
+        <span><i class="fa fa-calendar fa-lg"></i> 时间: </span>
+        <div class="btn-group" style="margin-left: 20px;">
+          <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:city].blank?)? "active" : ""}"%>
+          <% City.all.each do |c| %>
+            <%= link_to ChinaCity.get(c.city).split("市").first, events_path(city: c.city), :class => "btn btn-default btn-group #{(params[:city] == c.city)? "active" : "" }"%>
           <% end %>
         </div>
       </div>
@@ -28,7 +50,7 @@
                 <p class="title"><%= event.title %></p>
               <% end %>
                 <div class="details">
-                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i><%= ChinaCity.get(event.city) %></div>
+                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"> <%= ChinaCity.get(event.city).split("市").first %></i></div>
                   <div id="favorite-<%= event.id %>">
                     <%= render :partial => "favorite", :locals => {:event => event }%>
                   </div>

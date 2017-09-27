@@ -39,6 +39,16 @@ Category.create!(id:4, name: "交友")
 Category.create!(id:5, name: "读书")
 Category.create!(id:6, name: "游戏")
 
+# City部分
+City.delete_all
+
+City.create!(city: "110000")
+City.create!(city: "310000")
+City.create!(city: "440100")
+City.create!(city: "440300")
+City.create!(city: "330100")
+City.create!(city: "510100")
+
 # Event
 Event.delete_all
 

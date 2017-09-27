@@ -15,9 +15,11 @@ class Event < ApplicationRecord
     self.likes.where(:user_id => user.id).first
   end
 
+
   # status of events
   STATUS = ["preparing", "processing", "over"]
   validates_inclusion_of :status, :in => STATUS
 
   scope :by_category, ->(c){where( :category_id => c )}
+  scope :by_city, ->(c){where( :city => c )}
 end

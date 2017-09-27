@@ -8,6 +8,8 @@ class EventsController < ApplicationController
     if params[:category].present?
       # @category_id = Category.find_by(name: params[:category]).id
       @events = Event.by_category(params[:category]).order("created_at DESC")
+    elsif params[:city].present?
+      @events = Event.by_city(params[:city]).order("created_at DESC")
     else
       @events = Event.order("created_at DESC")
     end
