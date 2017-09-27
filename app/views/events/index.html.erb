@@ -28,7 +28,7 @@
                 <p class="title"><%= event.title %></p>
               <% end %>
                 <div class="details">
-                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.city %></div>
+                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i><%= ChinaCity.get(event.city) %></div>
                   <div id="favorite-<%= event.id %>">
                     <%= render :partial => "favorite", :locals => {:event => event }%>
                   </div>

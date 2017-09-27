@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     resources :events
   end
   get '/about', to: 'events#about'
+
+  mount ChinaCity::Engine => '/china_city'
 end

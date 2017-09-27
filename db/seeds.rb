@@ -69,7 +69,8 @@ events << Event.create!(
   每个人都是一个独立的个体，我们一直在想，什么样的形式，才能完美的表达每一个独立的灵魂和生活？<br>
   音乐给了我们答案，不论未来我们如何改变，始终会坚持全力以赴的去演绎好每一个音符。<br>
   ",
-  city: "深圳",
+  province: "440000",
+  city: "440300",
   address: "广东深圳空体新媒体实验室虚拟大学园R3-A栋1楼",
   sponsor: "空体",
   limited_num: 300,
@@ -95,7 +96,8 @@ events << Event.create!(
                 <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79ly1fjx60yj959j30rs0kugoz.jpg\"><br>
                 <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79ly1fjx60xs3moj30rs0kun0d.jpg\"><br>
                 <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79ly1fjx60x8jk1j30rs0ku3ze.jpg\"><br>",
-  city: "广州",
+  province: "440000",
+  city: "440100",
   address: "广东广州海珠区昌岗中路211-2号信和苑2栋1502",
   sponsor: "追梦音乐工作室",
   limited_num: 300,
@@ -117,7 +119,8 @@ events << Event.create!(
                 集合时间：惠新西街北口B口，早7点20分,
                 <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79ly1fjx68fuza5j30rs0fmwfy.jpg\"><br>
                 <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx68f90p7j30ku0dz7iu.jpg\"><br>",
-  city: "北京",
+  province: "110000",
+  city: "110000",
   address: "北京怀柔箭扣长城",
   sponsor: "东岸户外",
   limited_num: 100,
@@ -140,7 +143,8 @@ events << Event.create!(
   <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c986rxj30p00ew7a3.jpg\"><br>
   <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c7kbb5j30p00gotin.jpg\"><br>
   <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6c6dmakj30m80dlqbl.jpg\"><br>",
-  city: "广州",
+  province: "440000",
+  city: "440100",
   address: "广东广州南澳镇西冲村",
   sponsor: "小来子",
   limited_num: 50,
@@ -165,7 +169,8 @@ events << Event.create!(
                 你也可以是很爱凑热闹的XX群众<br>
                 游侠客【泡面食堂】最不缺的就是热闹！
                 <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6fujx1lj30rs0kt7gu.jpg\"><br>",
-  city: "杭州",
+  province: "330000",
+  city: "330100",
   address: "浙江杭州游侠客民宿",
   sponsor: "游侠客",
   limited_num: 100,
@@ -186,7 +191,8 @@ events << Event.create!(
                 所以，这里是一个关于食物和心理学的课程.<br>
                 <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79gy1fjx6j2jxljj30xc0r9x2m.jpg\" style=\"width: 960px;\"><br>
                 <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjx6iwpk4yj30qo0qoaru.jpg\"><br>",
-  city: "西安",
+  province: "610000",
+  city: "610100",
   address: "陕西西安碑林区长安北路皇族雅苑别墅",
   sponsor: "卷毛银时",
   limited_num: 30,
@@ -207,7 +213,8 @@ events << Event.create!(
   description: "赛事介绍：<br>
   <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6mvmai7j30rs2jvgzd.jpg\"><br>
   <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tNc79gy1fjx6mtnd0dj30rs2jvwog.jpg\"><br>",
-  city: "杭州",
+  province: "330000",
+  city: "330100",
   address: "浙江杭州运河大兜路146号游侠客民宿",
   sponsor: "游侠客",
   limited_num: 60,
@@ -238,7 +245,8 @@ events << Event.create!(
                 <br>
                 <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6og7sdmj30do0kd78e.jpg\"><br>
                 <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tNc79gy1fjx6ofpac2j30qo0i2tfd.jpg\"><br>",
-  city: "深圳",
+  province: "440000",
+  city: "440300",
   address: "深圳南山大冲国际中心5号楼6楼CD单元",
   sponsor: "ACG国际艺术教育",
   limited_num: 30,
@@ -262,7 +270,8 @@ events << Event.create!(
                 放下一切评判，把心打开，体会平凡文字的撩拨。<br>
                 带上喜欢的文字和你的故事，沉浸在9月的光阴里、情感的交融中。<br>
                 <img alt=\"\" src=\"https://ws3.sinaimg.cn/large/006tNc79gy1fjx6uscfjlj30fe0axweq.jpg\"><br>",
-  city: "上海",
+  province: "310000",
+  city: "310000",
   address: "上海静安芷江西路151号 文化中心 4楼多功能厅",
   sponsor: "书虫部落",
   limited_num: 50,
@@ -283,7 +292,8 @@ events << Event.create!(
   description: "一局狼人杀会让你爱上桌游, 也会使你深刻体会快乐真的会让时间变得匆匆.<br>
   加入我们，一起玩耍吧.<br>
   <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tNc79ly1fjx7612s7sj30f00a0q3m.jpg\"><br>",
-  city: "北京",
+  province: "110000",
+  city: "110000",
   address: "北京海淀区避风塘",
   sponsor: "殽赦",
   limited_num: 15,

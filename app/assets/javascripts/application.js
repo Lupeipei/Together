@@ -21,6 +21,7 @@
 //= require social-share-button
 //= require social-share-button/wechat
 //= require ckeditor/init
+//= require 'china_city/jquery.china_city'
 //= require_tree .
 
 // 回到顶部按钮

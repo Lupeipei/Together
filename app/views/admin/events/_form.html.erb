@@ -37,12 +37,17 @@
 
   <div class="form-group">
     <%= f.label :"描述" %>
-    <%= f.text_area :description, :class => "form-control" %>
+    <%= f.cktext_area :description, ckeditor: { language: 'zh-CN', toolbar: 'mini' }%>
+    <!-- <%= f.text_area :description, :class => "form-control" %> -->
   </div>
 
   <div class="form-group">
-    <%= f.label :"城市" %>
-    <%= f.text_field :city, :class => "form-control" %>
+    <div class="city-group">
+      <%= f.select :province, ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select"%>
+      <%= f.select :city, ChinaCity.list(f.object.province).presence || [["--城市--", 230900]], {}, class: "city-select"%>
+    </div>
+    <!-- <%= f.label :"城市" %>
+    <%= f.text_field :city, :class => "form-control" %> -->
   </div>
 
   <div class="form-group">

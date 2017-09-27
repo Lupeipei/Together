@@ -48,14 +48,22 @@
         <% end %>
       </div>
 
-      <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
+
+      <div class="form-group">
+        <div class="city-group">
+          <%= f.select :province, ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select"%>
+          <%= f.select :city, ChinaCity.list(f.object.province).presence || [["--城市--", 230900]], {}, class: "city-select"%>
+        </div>
+      </div>
+
+      <!-- <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
         <%= f.label :"城市" %>
         <%= f.text_field :city, :class => "form-control"%>
 
         <% if f.object.errors[:city]%>
           <span class="help-block"><%= safe_join(f.object.errors[:city], "、")%></span>
         <% end %>
-      </div>
+      </div> -->
 
       <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
         <%= f.label :"详细地址" %>
