@@ -4,6 +4,7 @@
       <!-- 筛选区域 -->
 
       <!-- 兴趣 -->
+      <%= form_tag events_path, :method => :get do %>
       <div class="submenu" style="margin-bottom: 3px;">
         <span><i class="fa fa-home fa-lg"></i> 兴趣: </span>
         <div class="btn-group" style="margin-left: 20px;">
@@ -25,14 +26,13 @@
       </div>
  <!-- 活动时间 -->
       <div class="submenu">
-        <%= form_tag events_path, :method => :get do %>
           <span><i class="fa fa-calendar fa-lg"></i> 时间: </span>
           <div class="form-group" style="margin-left: 80px; margin-top: -20px;">
             <%= text_field_tag :start_on, params[:start_on]%> ~  <%= text_field_tag :end_on, params[:end_on]%>
             <%= submit_tag "确认", :class => "btn btn-default"%>
           </div>
-        <% end %>
       </div>
+    <% end %>
 
       <!-- 活动列表 -->
       <ul class="clearfix">
@@ -66,5 +66,5 @@
 
 <script>
   $("#start_on").datepicker({format: "yyyy-mm-dd", language: "<%= I18n.locale %>"});
-  $("#end_on").datepicker({format: "yyyy-mm-dd", language: "<%= I18n.locale %>"})
+  $("#end_on").datepicker({format: "yyyy-mm-dd", language: "<%= I18n.locale %>"});
 </script>

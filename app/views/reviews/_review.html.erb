@@ -1,4 +1,5 @@
 <div id="reivew-<%= review.id %>" class="reviews" style="text-align: left;">
+    <!-- 显示用户头像 -->
   <ul>
     <div class="user_avatar" style="float: left;">
       <% if review.user.avatar.present? %>
@@ -8,6 +9,7 @@
       <% end %>
     </div>
   </ul>
+  <!-- 显示其他信息 -->
     <div class="row">
       <div class="col-md-9 review-user-info">
         <%= review.user.display_name %>
@@ -19,6 +21,7 @@
     <div class="review-comment">
       <%= review.content %>
     </div>
+    <!-- 用户可以删除自己的评论 -->
     <% if current_user == review.user %>
     <div class="pull-right">
       <%= link_to("delete", event_review_path(review.event,review), method: :delete, :remote => true)%>
