@@ -241,7 +241,21 @@ margin-bottom: 2px;
 }
 
 //about
+.about {
+  margin-bottom: -100px;
+  background-color: #fefefe;
+}
 .about_together {
-  float: left;
+  float:left;
   margin-left: 20px;
+
+}
+.add_you {
+  float:right;
+  background-image: url("https://ws4.sinaimg.cn/large/006tKfTcgy1fk0klscs0ng30dw08itfz.gif");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: 80% 50%;
+  height: 500px;
+  margin-top: -450px;
 }
