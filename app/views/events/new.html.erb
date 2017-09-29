@@ -5,7 +5,7 @@
 
       <%= simple_form_for @event do |f|%>
       <div class="form-group <%= (f.object.errors[:title].any?)? "has-error" : "" %>">
-        <%= f.label :"活动名称", :class => "control-label" %>
+        <%= f.label :"活动名称:", :class => "control-label" %>
         <%= f.text_field :title, :class => "form-control" %>
         <% if f.object.errors[:title]%>
           <span class="help-block"><%= safe_join(f.object.errors[:title], "、")%></span>
@@ -13,7 +13,7 @@
       </div>
 
       <div class="btn-group" data-toggle="buttons">
-        <%= f.label :"活动状态" %>
+        <%= f.label :"活动状态:" %>
         <br>
         <% Event::STATUS.each do |status| %>
           <label class="btn btn-default <%= (status == f.object.status)? 'active':'' %>">
@@ -23,8 +23,8 @@
         <% end %>
       </div>
 
-      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>">
-        <%= f.label :logo %>
+      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>" style="margin-top: 10px;">
+        <%= f.label :"活动图片:" %>
         <%= f.file_field :logo, :class => "form-control"%>
         <% if f.object.logo.present? %>
           <label>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="form-group <%= (f.object.errors[:description].any?)? "has-error" : "" %>">
-        <%= f.label :"描述" %>
+        <%= f.label :"活动描述:" %>
         <!-- <%= f.text_area :description, :class => "form-control" %> -->
         <%= f.cktext_area :description, ckeditor: { language: 'zh-CN', toolbar: 'mini' }%>
 
@@ -51,8 +51,8 @@
 
       <div class="form-group">
         <div class="city-group">
-          <%= f.select :province, ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select"%>
-          <%= f.select :city, ChinaCity.list(f.object.province).presence || [["--城市--", 230900]], {}, class: "city-select"%>
+          <%= f.select :province, ChinaCity.list.unshift(["--请选择省份--", 230000]), {}, class: "city-select"%>
+          <%= f.select :city, ChinaCity.list(f.object.province).presence || [["--请选择城市--", 230900]], {}, class: "city-select"%>
         </div>
       </div>
 
@@ -65,8 +65,8 @@
         <% end %>
       </div> -->
 
-      <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
-        <%= f.label :"详细地址" %>
+      <div class="form-group <%= (f.object.errors[:address].any?)? "has-error" : "" %>">
+        <%= f.label :"详细地址:" %>
         <%= f.text_field :address, :class => "form-control"%>
 
         <% if f.object.errors[:address]%>
@@ -75,7 +75,7 @@
       </div>
 
       <div class="form-group <%= (f.object.errors[:sponsor].any?)? "has-error" : "" %>">
-        <%= f.label :"主办方" %>
+        <%= f.label :"发起人:" %>
         <%= f.text_field :sponsor, :class => "form-control", :required => true %>
 
         <% if f.object.errors[:sponsor]%>
@@ -84,19 +84,20 @@
       </div>
 
       <div class="form-group">
-        <%= f.association :category, :required => true %>
+        <!-- <%= f.label :"活动类别:"%> -->
+        <%= f.association :category, label:"活动类别:", :required => true %>
       </div>
 
       <div class="form-group">
-        <%= f.input :limited_num, label: "人数限额"%>
+        <%= f.input :limited_num, label: "人数限额:"%>
       </div>
 
       <div class="form-group">
-        <%= f.input :start_time, label: "开始时间" %>
+        <%= f.input :start_time, label: "开始时间:" %>
       </div>
 
       <div class="form-group">
-        <%= f.input :end_time, label: "结束时间" %>
+        <%= f.input :end_time, label: "结束时间:" %>
       </div>
 
         <div class="form-group">
