@@ -396,8 +396,14 @@ puts "Likes are created"
 100.times do |i|
   Favorite.create!(user_id: users.sample.id, event_id: events.sample.id)
 end
-
 puts "Favorites are created"
+# 申请
+events.each do |e|
+  10.times do |i|
+    ApplyEvent.create!(user_id: users.sample.id, event_id: e.id)
+  end
+end
+puts "apply are created"
 
 # review
 Review.delete_all
