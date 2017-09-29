@@ -31,18 +31,8 @@
 
           <br>
           <div class="row">
-            <div class="col-md-2" id="apply-<%= @event_id %>">
-              <% if @event.end_time < Time.now %>
-              <label class="label label-default event-over">活动已结束</label>
-              <% elsif @event.appliers.count >= @event.limited_num %>
-              <label class="label label-default event-over">活动已满员</label>
-              <% else %>
-                <% if current_user && current_user.apply_already?(@event) %>
-                  <%= link_to("取消申请", apply_event_path(@event, type: "cancel"), method: :put, class: "btn btn-default event-apply")%>
-                <% else %>
-                  <%= link_to("申请赴约", apply_event_path(@event, type: "apply"), method: :put, class: "btn btn-success event-apply")%>
-                <% end %>
-              <% end %>
+            <div class="col-md-2" id="apply-<%= @event.id %>">
+              <%= render :partial => "apply", :locals => {:event => @event }%>
             </div>
 
             <div class="col-md-2" id="favorite-<%= @event.id %>">

@@ -51,7 +51,7 @@ class EventsController < ApplicationController
       current_user.cancel!(@event)
       @event.appliers.delete(current_user)
     end
-    redirect_to :back
+    # redirect_to :back
   end
 
 

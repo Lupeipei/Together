@@ -1,0 +1,15 @@
+<% if event.end_time < Time.now %>
+  <label class="label label-default event-over">活动已结束</label>
+<% elsif event.appliers.count >= event.limited_num %>
+  <label class="label label-default event-over">活动已满员</label>
+<% else %>
+  <% if current_user && current_user.apply_already?(event) %>
+    <%= link_to apply_event_path(event, type: "cancel"), method: :put, :remote => true do %>
+    <span class="btn btn-default event-apply">取消申请</span>
+    <% end %>
+  <% else %>
+    <%= link_to apply_event_path(event, type: "apply"), method: :put, :remote => true do %>
+    <span class="btn btn-success event-apply">申请赴约</span>
+    <% end %>
+  <% end %>
+<% end %>
