@@ -1,6 +1,7 @@
-<div class="pull-right">
+<div class="pull-right" style="margin-top: 5px;">
   <%= link_to("新建活动", new_admin_event_path, class: "btn btn-default")%>
 </div>
+
 <h1>活动列表</h1>
 
 <table class="table table-bordered">
@@ -39,3 +40,8 @@
     <% end %>
   </tbody>
 </table>
+
+<!-- 分页 -->
+<div class="text-center">
+  <%= will_paginate @events, renderer: BootstrapPagination::Rails, :previous_label => '上一页', :next_label => '下一页' %>
+</div>

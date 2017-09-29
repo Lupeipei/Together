@@ -31,7 +31,9 @@ class Event < ApplicationRecord
   STATUS = ["preparing", "processing", "over"]
   validates_inclusion_of :status, :in => STATUS
 
+  # scope
+
   scope :by_category, ->(c){where( :category_id => c )}
   scope :by_city, ->(c){where( :city => c )}
-  scope :by_paged, ->(p){paginate(:page => p, :per_page => 6)}
+  scope :by_paged, ->(p){paginate(:page => p, :per_page => 12)}
 end

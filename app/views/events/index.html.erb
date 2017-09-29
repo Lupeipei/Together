@@ -50,7 +50,13 @@
                 <p class="title"><%= event.title %></p>
               <% end %>
                 <div class="details">
-                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"> <%= ChinaCity.get(event.city).split("市").first %></i></div>
+                  <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <% if ChinaCity.get(event.city) == "市辖区" || ChinaCity.get(event.city) == "县" %>
+                      <%= ChinaCity.get(event.province).split("市").first %>
+                    <% else %>
+                      <%= ChinaCity.get(event.city).split("市").first %>
+                    <% end %>
+                  </div>
                   <div id="favorite-<%= event.id %>">
                     <%= render :partial => "favorite", :locals => {:event => event }%>
                   </div>
@@ -63,6 +69,7 @@
   </div>
 </div>
 
+<!-- 分页 -->
 <div class="text-center">
   <%= will_paginate @events, renderer: BootstrapPagination::Rails, :previous_label => '上一页', :next_label => '下一页' %>
 </div>
