@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
 
   def index
-    @events = Event.order("created_at DESC")
+    @events = Event.by_paged(params[:page]).order("created_at DESC")
     if params[:category].present?
       @events = @events.by_category(params[:category]).order("created_at DESC")
     end

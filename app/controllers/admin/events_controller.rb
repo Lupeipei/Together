@@ -4,7 +4,7 @@ class Admin::EventsController < ApplicationController
   layout 'admin'
 
   def index
-    @events = Event.all
+    @events = Event.all.by_paged(params[:page])
   end
 
   def new

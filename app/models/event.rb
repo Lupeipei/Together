@@ -33,5 +33,5 @@ class Event < ApplicationRecord
 
   scope :by_category, ->(c){where( :category_id => c )}
   scope :by_city, ->(c){where( :city => c )}
-  # scope :by_paged, ->(p){}
+  scope :by_paged, ->(p){paginate(:page => p, :per_page => 6)}
 end
