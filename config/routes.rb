@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resource :user
     resources :favorites
     resources :events
+    resources :apply_events
   end
   get '/about', to: 'events#about'
 

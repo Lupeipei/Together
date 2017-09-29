@@ -32,7 +32,7 @@
           <td><%= event.sponsor %></td>
           <td><%= event.category.name %></td>
           <td><%= event.limited_num %></td>
-          <td>10</td>
+          <td><%= event.limited_num - event.appliers.count %></td>
           <td><%= t(event.status, :scope => "event.status") %></td>
         </tr>
       <% end %>

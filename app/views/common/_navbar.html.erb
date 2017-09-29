@@ -50,6 +50,7 @@
                   <li><%= link_to(content_tag(:i, " 管理员面板",class: 'fa fa-user-o'), admin_events_path)%></li>
                   <% end %>
                   <li><%= link_to(content_tag(:i," 个人中心", class: 'fa fa-user' ), account_user_path)%></li>
+                  <li><%= link_to(content_tag(:i," 我的申请", class: 'fa fa-leaf' ),account_apply_events_path(current_user))%></li>
                   <li><%= link_to(content_tag(:i," 我的收藏", class: 'fa fa-heart' ),account_favorites_path(current_user))%></li>
                   <li><%= link_to(content_tag(:i," 我的邀请", class: 'fa fa-pencil-square-o'), account_events_path)%></li>
                   <li><%= link_to(content_tag(:i," 登出", class: 'fa fa-sign-out' ), destroy_user_session_path, method: :delete)%></li>

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <h3 style="color:#7f8c8d;">我的申请</h3>
+    <div class="my-favorite">
+      <div class="favorite-item-header center-block">
+        <label class="col-md-2">活动</label>
+        <label class="col-md-2">名称</label>
+        <label class="col-md-1">开始时间</label>
+        <label class="col-md-1">结束时间</label>
+        <label class="col-md-1">主办方</label>
+        <label class="col-md-1">地点</label>
+        <label class="col-md-1">人数限额</label>
+        <label class="col-md-1">剩余名额</label>
+        <label class="col-md-2">操作</label>
+      </div>
+      <% @events.each do |event| %>
+      <div class="event-item-<%= event.id%>">
+        <div class="favorite-item-list row text-center">
+          <div class="col-md-2">
+            <%= link_to event_path(event) do %>
+            <% if event.logo.present? %>
+              <%= image_tag(event.logo.url, size: "150x150") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/150x150&text=No Pic") %>
+            <% end %>
+          <% end %>
+          </div>
+          <div class="col-md-2 text-left">
+            <%= link_to(event.title, event_path(event))%>
+          </div>
+          <div class="col-md-1">
+            <%= event.start_time %>
+          </div>
+          <div class="col-md-1">
+            <%= event.end_time %>
+          </div>
+          <div class="col-md-1">
+            <%= event.sponsor %>
+          </div>
+          <div class="col-md-1">
+            <%= event.address %>
+          </div>
+          <div class="col-md-1">
+            <%= event.limited_num %>
+          </div>
+          <div class="col-md-1">
+            <%= event.limited_num - event.appliers.count %>
+          </div>
+          <div class="col-md-2">
+            <%= link_to "取消申请",apply_event_path(event,type: "cancel"), method: :put, class: "btn btn-default btn-sm"%>
+          </div>
+        </div>
+        <hr>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- 分页 -->
+<div class="text-center">
+  <%= will_paginate @events, renderer: BootstrapPagination::Rails, :previous_label => '上一页', :next_label => '下一页' %>
+</div>
