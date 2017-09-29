@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   validates :title, :logo, :status, :description, :presence => true, :on => :create
   validates :start_time, :end_time, :city, :province,:address, :sponsor,:limited_num, :presence => true, :on => :create
+  validate :start_time_early_than_end_time
 
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
@@ -14,6 +15,15 @@ class Event < ApplicationRecord
 
   def find_like(user)
     self.likes.where(:user_id => user.id).first
+  end
+
+
+  # logic check between start_time and end_time
+
+  def start_time_early_than_end_time
+    if self.start_time >= self.end_time
+      errors.add(:end_time, "结束时间不得小于开始时间")
+    end
   end
 
 

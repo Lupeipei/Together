@@ -5,7 +5,7 @@
 
       <%= simple_form_for @event do |f|%>
       <div class="form-group <%= (f.object.errors[:title].any?)? "has-error" : "" %>">
-        <%= f.input :title,label: "活动名称:",as: :text, :class => "form-control" %>
+        <%= f.input :title,label: "活动名称:", :class => "form-control" %>
         <% if f.object.errors[:title]%>
           <span class="help-block"><%= safe_join(f.object.errors[:title], "、")%></span>
         <% end %>
@@ -22,7 +22,7 @@
         <% end %>
       </div>
 
-      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>" style="margin-top: 13px; height: 40px;">
+      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>" style="margin-top: 13px; height: 50px;">
         <%= f.input :logo, label: "活动图片:", as: :file, :class => "form-control"%>
         <% if f.object.logo.present? %>
           <label>
@@ -65,7 +65,7 @@
       </div> -->
 
       <div class="form-group <%= (f.object.errors[:address].any?)? "has-error" : "" %>">
-        <%= f.input :address,label: "详细地址:",as: :text, :class => "form-control"%>
+        <%= f.input :address,label: "详细地址:", :class => "form-control"%>
 
         <% if f.object.errors[:address]%>
           <span class="help-block"><%= safe_join(f.object.errors[:address], "、")%></span>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="form-group <%= (f.object.errors[:sponsor].any?)? "has-error" : "" %>">
-        <%= f.input :sponsor,label: "发起人:",as: :text, :class => "form-control", :required => true %>
+        <%= f.input :sponsor,label: "发起人:", :class => "form-control", :required => true %>
 
         <% if f.object.errors[:sponsor]%>
           <span class="help-block"><%= safe_join(f.object.errors[:sponsor], "、")%></span>
