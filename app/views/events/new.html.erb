@@ -5,8 +5,7 @@
 
       <%= simple_form_for @event do |f|%>
       <div class="form-group <%= (f.object.errors[:title].any?)? "has-error" : "" %>">
-        <%= f.label :"活动名称:", :class => "control-label" %>
-        <%= f.text_field :title, :class => "form-control" %>
+        <%= f.input :title,label: "活动名称:",as: :text, :class => "form-control" %>
         <% if f.object.errors[:title]%>
           <span class="help-block"><%= safe_join(f.object.errors[:title], "、")%></span>
         <% end %>
@@ -23,9 +22,8 @@
         <% end %>
       </div>
 
-      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>" style="margin-top: 10px;">
-        <%= f.label :"活动图片:" %>
-        <%= f.file_field :logo, :class => "form-control"%>
+      <div class="form-group <%= (f.object.errors[:logo].any?)? "has-error" : "" %>" style="margin-top: 13px; height: 40px;">
+        <%= f.input :logo, label: "活动图片:", as: :file, :class => "form-control"%>
         <% if f.object.logo.present? %>
           <label>
             <%= f.check_box :remove_logo %>
@@ -50,6 +48,7 @@
 
 
       <div class="form-group">
+        <%= f.label :"活动地点："%>
         <div class="city-group">
           <%= f.select :province, ChinaCity.list.unshift(["--请选择省份--", 230000]), {}, class: "city-select"%>
           <%= f.select :city, ChinaCity.list(f.object.province).presence || [["--请选择城市--", 230900]], {}, class: "city-select"%>
@@ -66,8 +65,7 @@
       </div> -->
 
       <div class="form-group <%= (f.object.errors[:address].any?)? "has-error" : "" %>">
-        <%= f.label :"详细地址:" %>
-        <%= f.text_field :address, :class => "form-control"%>
+        <%= f.input :address,label: "详细地址:",as: :text, :class => "form-control"%>
 
         <% if f.object.errors[:address]%>
           <span class="help-block"><%= safe_join(f.object.errors[:address], "、")%></span>
@@ -75,8 +73,7 @@
       </div>
 
       <div class="form-group <%= (f.object.errors[:sponsor].any?)? "has-error" : "" %>">
-        <%= f.label :"发起人:" %>
-        <%= f.text_field :sponsor, :class => "form-control", :required => true %>
+        <%= f.input :sponsor,label: "发起人:",as: :text, :class => "form-control", :required => true %>
 
         <% if f.object.errors[:sponsor]%>
           <span class="help-block"><%= safe_join(f.object.errors[:sponsor], "、")%></span>
@@ -84,7 +81,6 @@
       </div>
 
       <div class="form-group">
-        <!-- <%= f.label :"活动类别:"%> -->
         <%= f.association :category, label:"活动类别:", :required => true %>
       </div>
 

@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
-  validates :title, :logo, :status, :description, :start_time, :end_time, :city, :address, :sponsor,:limited_num, presence: true
+  validates :title, :logo, :status, :description, :presence => true, :on => :create
+  validates :start_time, :end_time, :city, :province,:address, :sponsor,:limited_num, :presence => true, :on => :create
 
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
@@ -22,5 +23,5 @@ class Event < ApplicationRecord
 
   scope :by_category, ->(c){where( :category_id => c )}
   scope :by_city, ->(c){where( :city => c )}
-  scope :by_paged, ->(p){}
+  # scope :by_paged, ->(p){}
 end
