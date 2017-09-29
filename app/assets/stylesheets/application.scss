@@ -122,7 +122,7 @@ margin-bottom: 2px;
 .eventslist_page .city {
   float: left;
   width: 50%;
-  padding: 5px 60px;
+  padding: 5px 40px;
   margin: -5px;
 }
 .eventslist_page .favorite {
@@ -206,6 +206,18 @@ margin-bottom: 2px;
     list-style: none;
     margin-bottom: -8px;
     border-bottom: 0;
+}
+
+.event-over {
+  display: block;
+  width: 500px;
+  height: 30px;
+  font-size: 16px;
+  padding: 6px 6px;
+  margin-top: -2px;
+}
+.event-apply {
+  margin-top: -6px;
 }
 //活动评价部分
 

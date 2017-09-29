@@ -4,11 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :resumes
+
   has_many :events
+
+  has_many :reviews
+
+  has_many :apply_events
+  has_many :applied_events, through: :apply_events, source: :event
+
   has_many :favorites
   has_many :favorite_events, through: :favorites, source: :event
-  has_many :reviews
 
   has_many :likes, :dependent => :destroy
   has_many :liked_events, :through => :likes, :source => :event
@@ -36,5 +41,17 @@ class User < ApplicationRecord
 
   def unfavorite!(event)
     favorite_events.delete(event)
+  end
+
+  def apply_already?(event)
+    applied_events.include?(event)
+  end
+
+  def apply!(event)
+    applied_events << event
+  end
+
+  def cancel!(event)
+    applied_events.delete(event)
   end
 end

@@ -23,7 +23,7 @@ puts "Admin is created"
 # Users
 
 users = []
-50.times do |i|
+150.times do |i|
   users << User.create!(:email => Faker::Internet.email, :password => "123456", :username => Faker::Name.name)
 end
 
@@ -98,7 +98,7 @@ events << Event.create!(
   id: 2,
   category_id: 1,
   user_id: users.sample.id,
-  title: "广州追梦#ukulele#周末免费公开课",
+  title: "广州追梦#ukulele#周末公开课",
   description: "【只要2小时】从零基础到自弹自唱—达成， <br>
                 认识更多有趣的朋友， <br>
                 感受尤克里里的独特魅力， <br>
@@ -114,13 +114,34 @@ events << Event.create!(
   start_time: Time.local(2017, 10, 15, 19, 00),
   end_time: Time.local(2017, 10, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tKfTcly1fjfyagis5pj30rs0kugoz.jpg")
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/201.jpg")
+)
+
+events << Event.create!(
+  id: 3,
+  category_id: 1,
+  user_id: users.sample.id,
+  title: "SofarSounds全球青年音乐社群",
+  description: "遍布全球的秘密音乐会，邀请你在意想不到的地方听歌，这一次是北京的足球场！ <br>
+                <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tKfTcly1fk0fm2u1xaj30rr0iiadn.jpg\"><br>
+                这里有和你一样有趣，但以不同方式有趣着的人， <br>
+                <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tKfTcly1fk0fm2hginj30rs0ij76k.jpg\"><br>
+                用你意想不到的方式唱能让你微笑的歌. <br>
+                <img alt=\"\" src=\"https://ws1.sinaimg.cn/large/006tKfTcly1fk0fm270lmj30rs0nj0x7.jpg\"><br>",
+  province: "110000",
+  city: "110000",
+  address: "北京昌平回龙观东大街",
+  sponsor: "SofarSounds",
+  limited_num: 500,
+  start_time: Time.local(2017, 12, 15, 19, 00),
+  end_time: Time.local(2017, 12, 15, 22, 00) ,
+  status: ["preparing","processing"].sample,
+  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/304.jpeg")
 )
 
 # 户外2
 events << Event.create!(
-  id: 3,
+  id: 4,
   category_id: 2,
   user_id: users.sample.id,
   title: "重逢箭扣长城，东线穿越",
@@ -137,13 +158,12 @@ events << Event.create!(
   start_time: Time.local(2017, 11, 15, 07, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lhd50vqj30ku0dwgpb.jpg")
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/travel/101.jpg")
 )
 
 
 events << Event.create!(
-  id: 4,
+  id: 5,
   category_id: 2,
   user_id: users.sample.id,
   title: "GDPMS东西冲露营+穿越 | 徒步中国最美海岸线",
@@ -168,7 +188,7 @@ events << Event.create!(
 # 约厨3
 
 events << Event.create!(
-  id: 5,
+  id: 6,
   category_id: 3,
   user_id: users.sample.id,
   title: "泡面食堂大侠召集令",
@@ -192,7 +212,7 @@ events << Event.create!(
 )
 
 events << Event.create!(
-  id: 6,
+  id: 7,
   category_id: 3,
   user_id: users.sample.id,
   title: "心灵厨房",
@@ -216,7 +236,7 @@ events << Event.create!(
 # 交友4
 
 events << Event.create!(
-  id: 7,
+  id: 8,
   category_id: 4,
   user_id: users.sample.id,
   title: "【无意义大赛】全宇宙最无聊的比赛，太扯淡了!",
@@ -238,7 +258,7 @@ events << Event.create!(
 )
 
 events << Event.create!(
-  id: 8,
+  id: 9,
   category_id: 4,
   user_id: users.sample.id,
   title: "第二届ACG国际艺术展：展会作品大招募",
@@ -268,7 +288,7 @@ events << Event.create!(
 )
 
 events << Event.create!(
-  id: 9,
+  id: 10,
   category_id: 4,
   user_id: users.sample.id,
   title: "梦想花艺课堂之居家桌花",
@@ -293,7 +313,7 @@ events << Event.create!(
 # 读书5
 
 events << Event.create!(
-  id: 10,
+  id: 11,
   category_id: 5,
   user_id: users.sample.id,
   title: "光阴读书会 | 朗读场",
@@ -318,7 +338,7 @@ events << Event.create!(
 # 游戏6
 
 events << Event.create!(
-  id: 11,
+  id: 12,
   category_id: 6,
   user_id: users.sample.id,
   title: "周末拒绝宅，一起狼人杀吧",
@@ -337,11 +357,35 @@ events << Event.create!(
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/601.jpeg")
 )
 
+
+events << Event.create!(
+  id: 13,
+  category_id: 6,
+  user_id: users.sample.id,
+  title: "王者荣耀成都大赛",
+  description: "王者荣耀盛典即将开启，官方为大家准备了七大福利活动，想参加的快来看看吧！<br>
+  你的游戏不再孤单。我们会不定期组织群活动，一起打排位赛.<br>
+  <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tKfTcgy1fk0f5ejiz6j30hs0cqgoh.jpg\"><br>
+  <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tKfTcgy1fk0f5dl2bij30hs0diabb.jpg\"><br>
+  <img alt=\"\" src=\"https://ws4.sinaimg.cn/large/006tKfTcgy1fk0f5cw418j30hs0dx76z.jpg\"><br>
+  <img alt=\"\" src=\"https://ws2.sinaimg.cn/large/006tKfTcgy1fk0f5c3vxaj30hs0fvwfd.jpg\"><br>",
+  province: "510000",
+  city: "510100",
+  address: "成都未来国际大厦",
+  sponsor: "winter",
+  limited_num: 100,
+  start_time: Time.local(2017, 12, 10, 14, 00),
+  end_time: Time.local(2017, 12, 10, 18, 00) ,
+  status: ["preparing","processing"].sample,
+  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/602.jpg")
+)
+
 puts "Events are created"
 
 # 收藏
 
-30.times do |i|
+100.times do |i|
   Like.create!(user_id: users.sample.id, event_id: events.sample.id)
 end
 
@@ -349,7 +393,7 @@ puts "Likes are created"
 
 # 点赞
 
-20.times do |i|
+100.times do |i|
   Favorite.create!(user_id: users.sample.id, event_id: events.sample.id)
 end
 

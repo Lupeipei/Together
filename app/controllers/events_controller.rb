@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
-  before_action :check_user, only: [:favorite, :like]
-  before_action :authenticate_user!, only: [:favorite, :like, :new, :create]
+  before_action :check_user, only: [:favorite, :like, :apply]
+  before_action :authenticate_user!, only: [:favorite, :like, :apply, :new, :create]
   before_action :validate_search_key, only: [:search]
 
 
   def index
-    @events = Event.by_paged(params[:page]).order("created_at DESC")
+    @events = Event.by_paged(params[:page]).order("start_time ASC")
     if params[:category].present?
-      @events = @events.by_category(params[:category]).order("created_at DESC")
+      @events = @events.by_category(params[:category]).order("start_time ASC")
     end
     if params[:city].present?
-      @events = @events.by_city(params[:city]).order("created_at DESC")
+      @events = @events.by_city(params[:city]).order("start_time ASC")
     end
     if params[:start_on].present?
       @events = @events.where("start_time >= ?", Date.parse(params[:start_on]).beginning_of_day)
@@ -40,6 +40,20 @@ class EventsController < ApplicationController
       render :new
     end
   end
+
+  def apply
+    @event = Event.find(params[:id])
+    type = params[:type]
+    if type == "apply"
+      current_user.apply!(@event)
+      @event.appliers << current_user
+    else type == "cancel"
+      current_user.cancel!(@event)
+      @event.appliers.delete(current_user)
+    end
+    redirect_to :back
+  end
+
 
   def favorite
     @event = Event.find(params[:id])

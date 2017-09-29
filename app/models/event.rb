@@ -6,12 +6,17 @@ class Event < ApplicationRecord
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
   mount_uploader :logo, EventlogoUploader
+
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
+
   has_many :reviews
 
   has_many :likes, :dependent => :destroy
   has_many :liked_users, :through => :likes, :source => :user
+
+  has_many :apply_events
+  has_many :appliers, :through => :apply_events, :source => :user
 
   def find_like(user)
     self.likes.where(:user_id => user.id).first

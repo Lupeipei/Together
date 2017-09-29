@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     put :favorite, on: :member
     put :like, on: :member
+    put :apply, on: :member
   end
 
   namespace :admin do
