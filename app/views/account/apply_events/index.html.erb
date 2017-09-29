@@ -5,13 +5,13 @@
       <div class="favorite-item-header center-block">
         <label class="col-md-2">活动</label>
         <label class="col-md-2">名称</label>
-        <label class="col-md-1">开始时间</label>
-        <label class="col-md-1">结束时间</label>
+        <label class="col-md-2">开始时间</label>
+        <label class="col-md-2">结束时间</label>
         <label class="col-md-1">主办方</label>
         <label class="col-md-1">地点</label>
         <label class="col-md-1">人数限额</label>
         <label class="col-md-1">剩余名额</label>
-        <label class="col-md-2">操作</label>
+        <!-- <label class="col-md-2">操作</label> -->
       </div>
       <% @events.each do |event| %>
       <div class="event-item-<%= event.id%>">
@@ -28,10 +28,10 @@
           <div class="col-md-2 text-left">
             <%= link_to(event.title, event_path(event))%>
           </div>
-          <div class="col-md-1">
+          <div class="col-md-2">
             <%= event.start_time %>
           </div>
-          <div class="col-md-1">
+          <div class="col-md-2">
             <%= event.end_time %>
           </div>
           <div class="col-md-1">
@@ -46,9 +46,9 @@
           <div class="col-md-1">
             <%= event.limited_num - event.appliers.count %>
           </div>
-          <div class="col-md-2">
-            <%= link_to "取消申请",apply_event_path(event,type: "cancel"), method: :put, class: "btn btn-default btn-sm"%>
-          </div>
+          <!-- <div class="col-md-2" id="apply-<%= event.id %>">
+            <%= render :partial => "events/apply", :locals => {:event => event }%>
+          </div> -->
         </div>
         <hr>
       </div>

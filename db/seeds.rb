@@ -398,9 +398,11 @@ puts "Likes are created"
 end
 puts "Favorites are created"
 # 申请
+ApplyEvent.delete_all
+
 events.each do |e|
   10.times do |i|
-    ApplyEvent.create!(user_id: users.sample.id, event_id: e.id)
+    ApplyEvent.create!(user_id: users[i].id, event_id: e.id)
   end
 end
 puts "apply are created"

@@ -46,10 +46,8 @@ class EventsController < ApplicationController
     type = params[:type]
     if type == "apply"
       current_user.apply!(@event)
-      @event.appliers << current_user
     else type == "cancel"
       current_user.cancel!(@event)
-      @event.appliers.delete(current_user)
     end
     # redirect_to :back
   end

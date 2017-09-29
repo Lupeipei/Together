@@ -3,17 +3,17 @@
     <h3 style="color:#7f8c8d;">我的收藏</h3>
     <div class="my-favorite">
       <div class="favorite-item-header center-block">
-        <label class="col-md-2">活动</label>
-        <label class="col-md-2">名称</label>
+        <label class="col-md-3">活动</label>
+        <label class="col-md-3">名称</label>
         <label class="col-md-2">开始时间</label>
         <label class="col-md-2">结束时间</label>
         <label class="col-md-2">地点</label>
-        <label class="col-md-2">操作</label>
+        <!-- <label class="col-md-2">操作</label> -->
       </div>
       <% @events.each do |event| %>
       <div class="event-item-<%= event.id%>">
         <div class="favorite-item-list row text-center">
-          <div class="col-md-2">
+          <div class="col-md-3">
             <%= link_to event_path(event) do %>
             <% if event.logo.present? %>
               <%= image_tag(event.logo.url, size: "150x150") %>
@@ -22,7 +22,7 @@
             <% end %>
           <% end %>
           </div>
-          <div class="col-md-2 text-left">
+          <div class="col-md-3 text-left">
             <%= link_to(event.title, event_path(event))%>
           </div>
           <div class="col-md-2">
@@ -34,9 +34,9 @@
           <div class="col-md-2">
             <%= event.address %>
           </div>
-          <div class="col-md-2">
-            <%= link_to "取消收藏",favorite_event_path(event,type: "unfavorite"), method: :put, class: "btn btn-success btn-sm"%>
-          </div>
+          <!-- <div class="col-md-2"  id="favorite-<%= event.id %>">
+            <%= render :partial => "events/favorite", :locals => {:event => event }%>
+          </div> -->
         </div>
         <hr>
       </div>

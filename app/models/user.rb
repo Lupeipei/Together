@@ -48,7 +48,9 @@ class User < ApplicationRecord
   end
 
   def apply!(event)
-    applied_events << event
+    unless applied_events.include?(event)
+      applied_events << event
+    end
   end
 
   def cancel!(event)
