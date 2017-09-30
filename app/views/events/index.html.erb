@@ -10,7 +10,7 @@
         <div class="btn-group" style="margin-left: 20px;">
           <%= link_to "全部", events_path, :class => "btn btn-default btn-group #{(params[:category].blank?)? "active" : ""}"%>
           <% Category.all.each do |c| %>
-            <%= link_to c.name, events_path(category: c), :class => "btn btn-default btn-group #{(params[:category] == c)? "active" : "" }"%>
+            <%= link_to c.name, events_path(category: c.id), :class => "btn btn-default btn-group #{(params[:category] == c.id )? "active" : "" }"%>
           <% end %>
         </div>
       </div>
@@ -51,11 +51,7 @@
               <% end %>
                 <div class="details">
                   <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <!-- <% if ChinaCity.get(event.city) == "市辖区" || ChinaCity.get(event.city) == "县" %>
-                      <%= ChinaCity.get(event.province).split("市").first %>
-                    <% else %> -->
                       <%= ChinaCity.get(event.city).split("市").first %>
-                    <!-- <% end %> -->
                   </div>
                   <div id="favorite-<%= event.id %>">
                     <%= render :partial => "favorite", :locals => {:event => event }%>
