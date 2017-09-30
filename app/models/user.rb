@@ -19,6 +19,8 @@ class User < ApplicationRecord
   has_many :liked_events, :through => :likes, :source => :event
 
   mount_uploader :avatar, AvatarUploader
+
+
   def admin?
     self.is_admin
   end

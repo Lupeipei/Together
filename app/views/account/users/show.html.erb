@@ -14,27 +14,29 @@
       <div class="col-md-8 basic_info">
         <h3>基本信息</h3>
         <br>
-
+        <p><strong>邮箱：  </strong><%= @user.email %></p>
+        <hr>
         <%= simple_form_for [:account, @user] do |f| %>
           <div class="my_name">
-            <p><strong>邮箱：  </strong><%= @user.email %></p>
-            <br>
-            <p><strong>用户名：  </strong><input type="text" name="user[username]" value="<%= @user.username %>"></p>
+            <h4 style="margin-bottom: 15px;">修改用户名： </h4>
+            <%= f.label :"用户名：" %>
+            <%= f.input_field :username %>
           </div>
+          <hr>
           <div class="my_password">
-            <p><strong>修改密码： </strong></p>
-            <br>
-            <%= f.input :password, label: "旧密码", hint: false, error_html: { id: 'password_error'} %>
-            <%= f.input :password, label: "新密码", hint: false, error_html: { id: 'password_error'} %>
-            <%= f.input :password_confirmation, label: "密码确认" %>
+            <h4>修改密码： </h4>
+            <%= f.input :current_password, label: "旧密码：", hint: false, error_html: { id: 'password_error'} %>
+            <%= f.input :password, label: "新密码：", hint: false, error_html: { id: 'password_error'} %>
+            <%= f.input :password_confirmation, label: "密码确认："%>
           </div>
+          <hr>
           <div class="my-photo">
-            <p><strong>头像设置：</strong></p>
+            <h4>修改头像： </h4>
             <%= f.file_field :avatar%>
           </div>
           <br>
           <div class="form-group">
-            <%= f.submit "更新", class: "btn btn-default"%>
+            <%= f.submit "更新", class: "btn btn-success"%>
           </div>
 
         <% end %>
