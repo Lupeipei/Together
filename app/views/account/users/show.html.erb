@@ -21,6 +21,13 @@
             <br>
             <p><strong>用户名：  </strong><input type="text" name="user[username]" value="<%= @user.username %>"></p>
           </div>
+          <div class="my_password">
+            <p><strong>修改密码： </strong></p>
+            <br>
+            <%= f.input :password, label: "旧密码", hint: false, error_html: { id: 'password_error'} %>
+            <%= f.input :password, label: "新密码", hint: false, error_html: { id: 'password_error'} %>
+            <%= f.input :password_confirmation, label: "密码确认" %>
+          </div>
           <div class="my-photo">
             <p><strong>头像设置：</strong></p>
             <%= f.file_field :avatar%>
