@@ -51,11 +51,11 @@
               <% end %>
                 <div class="details">
                   <div class="city"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <% if ChinaCity.get(event.city) == "市辖区" || ChinaCity.get(event.city) == "县" %>
+                    <!-- <% if ChinaCity.get(event.city) == "市辖区" || ChinaCity.get(event.city) == "县" %>
                       <%= ChinaCity.get(event.province).split("市").first %>
-                    <% else %>
+                    <% else %> -->
                       <%= ChinaCity.get(event.city).split("市").first %>
-                    <% end %>
+                    <!-- <% end %> -->
                   </div>
                   <div id="favorite-<%= event.id %>">
                     <%= render :partial => "favorite", :locals => {:event => event }%>
