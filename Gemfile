@@ -47,6 +47,7 @@ gem 'social-share-button'
 gem 'ckeditor'
 gem 'china_city'
 gem 'bootstrap-datepicker-rails'
+gem 'mysql2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -56,6 +57,8 @@ gem 'bootstrap-datepicker-rails'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
