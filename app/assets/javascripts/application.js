@@ -38,3 +38,19 @@ $(window).scroll(function(){
     $('#gotop').fadeOut();
   }
 })
+
+
+//手机适配c测试
+$(document).ready(function() {
+    // This will fire when document is ready:
+    $(window).resize(function() {
+        // This will fire each time the window is resized:
+        if($(window).width() >= 1024) {
+            // if larger or equal
+            $('.element').show();
+        } else {
+            // if smaller
+            $('.element').hide();
+        }
+    }).resize(); // This will simulate a resize to trigger the initial run.
+});
