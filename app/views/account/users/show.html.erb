@@ -1,6 +1,6 @@
 <div class="container my_info">
   <div class="row">
-      <h1 class="text-center">个人中心</h1>
+
       <div class="col-md-12">
       <div class="col-md-4 text-center my_info_avatar">
         <% if current_user.avatar.present? %>
@@ -21,13 +21,6 @@
             <h4 style="margin-bottom: 15px;">修改用户名： </h4>
             <%= f.label :"用户名：" %>
             <%= f.input_field :username %>
-          </div>
-          <hr>
-          <div class="my_password">
-            <h4>修改密码： </h4>
-            <%= f.input :current_password, label: "旧密码：", hint: false, error_html: { id: 'password_error'} %>
-            <%= f.input :password, label: "新密码：", hint: false, error_html: { id: 'password_error'} %>
-            <%= f.input :password_confirmation, label: "密码确认："%>
           </div>
           <hr>
           <div class="my-photo">

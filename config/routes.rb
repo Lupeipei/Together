@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :events
   end
   namespace :account do
-    resource :user
+    resource :user do
+      collection do
+        put 'update_password'
+      end
+    end
     resources :favorites
     resources :events
     resources :apply_events

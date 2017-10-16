@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Together</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  </head>
+
+  <body>
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar"%>
+        </div>
+
+        <div style="margin-top:50px;">
+          <%= render "common/flashes"%>
+          <div class="row">
+            <div class="col-md-2 float-left" role="navigation">
+              <nav class="menu">
+                <h4 class="menu-heading">
+                  个人中心
+                </h4>
+                <a href="/account/user" class="menu-item selected">个人信息</a>
+                <a href="/account/user/edit" class="menu-item">更新密码</a>
+              </nav>
+            </div>
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%= render "common/footer"%>
+  </body>
+</html>
