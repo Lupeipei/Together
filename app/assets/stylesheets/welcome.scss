@@ -11,14 +11,23 @@
 }
 #myCarousel .carousel-inner .item {                //图片截取的宽度，这里与相框高度一致
     height: 800px;
-    // background-size: cover;                             //确保图片完全撑开
+    background-size: cover;                             //确保图片完全撑开
     background-position: center center;
     background-repeat: no-repeat;
 }
-
-#myCarousel .carousel-inner .item .carousel-caption {                //图片截取的宽度，这里与相框高度一致
-
+#myCarousel .carousel-inner .slide1 {
+  background-image: url(https://ws3.sinaimg.cn/large/006tNc79gy1fj8fv4a091j31kw11xqpo.jpg);
 }
+
+#myCarousel .carousel-inner .slide2 {
+  background-image: url(https://ws1.sinaimg.cn/large/006tNc79gy1fj8fv3h3m1j31kw16o1bl.jpg);
+}
+
+#myCarousel .carousel-inner .slide3 {
+  background-image: url(https://ws3.sinaimg.cn/large/006tNc79gy1fj8fv2jm4kj31hc0u0n4a.jpg);
+}
+
+
 #myCarousel .carousel-indicators > li {            //滚动按钮的设置
     width: 5px;
     height: 5px;
