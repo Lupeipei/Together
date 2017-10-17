@@ -25,17 +25,21 @@
 
 
 html {
-    min-height: 100%;
-    position: relative;
+    height: 100%;
 }
 
 body {
-  margin-bottom: 180px;
+  min-height: 100%;                                   // footer固定底部
+  display: flex;                                      // footer固定底部
+  flex-direction: column;                             // footer固定底部
+  font-size: 1.2em;                                   // 网站所有字体缩小比例
 }
 
-.img {
-  width: 100%;
+.content {
+ flex: 1;
 }
+
+
 // flashes
 .alert {
   margin: 0px -15px;
