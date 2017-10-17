@@ -153,9 +153,7 @@
 }
 
 /*-- 用户评价部分 --*/
-.landingpage-evaluation {
-  height: 300px;
-}
+
 .short-line {
   background: rgba(0,0,0,0.1);
   margin: 15px auto 35px auto;
@@ -165,29 +163,29 @@
 .person .avata-wrapper {
     position: absolute;
     background-position: center center;
-    margin-left: 70px;
+    left: 33%;
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
 
 .person .intro {
-   position: relative;
-   height: 75px;
-   overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  z-index: 0;
+  font-weight: 800;
+}
+.person .intro .name {
+   height: 100%;
    font-size: 16px;
-   z-index: 0;
    margin-top: 100px;
    font-weight: 800;
 }
 
-.person .words {
-   position: relative;
-   height: 75px;
-   overflow: hidden;
+.person .intro .words {
    font-size: 14px;
-   z-index: 0;
-   margin-top: -30px;
+   margin-top: 30px;
    font-weight: 800;
 }
 
