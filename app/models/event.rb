@@ -26,8 +26,10 @@ class Event < ApplicationRecord
   # logic check between start_time and end_time
 
   def start_time_early_than_end_time
-    if self.start_time >= self.end_time
-      errors.add(:end_time, "结束时间不得小于开始时间")
+    if self.start_time.present? && self.end_time.present?
+      if self.start_time >= self.end_time
+        errors.add(:end_time, "结束时间不得小于开始时间")
+      end
     end
   end
 
