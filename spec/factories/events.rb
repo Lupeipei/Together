@@ -8,8 +8,16 @@ FactoryBot.define do
     avatar {File.new("#{Rails.root}/spec/factories/p1.jpg")}
   end
 
+  factory :admin do
+    email {Faker::Internet.email}
+    password "password"
+    password_confirmation {password}
+    username "admin"
+    avatar {File.new("#{Rails.root}/spec/factories/p1.jpg")}
+    is_admin true
+  end
+
   factory :category do
-    # association :event
     id 1
     name "音乐"
   end

@@ -26,12 +26,12 @@ class Account::UsersController < ApplicationController
     end
   end
 
-  def update_password
-    @user = current_user
-    if @user.update_with_password(user_params)
-      bypass_sign_in(@user)
-      redirect_to account_user_path, notice: "密码更新成功"
-    end
+  # def update_password
+  #   @user = current_user
+  #   if @user.update_with_password(user_params)
+  #     bypass_sign_in(@user)
+  #     redirect_to account_user_path, notice: "密码更新成功"
+  #   end
   end
 
 
