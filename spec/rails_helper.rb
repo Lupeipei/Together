@@ -34,7 +34,17 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
   config.include Devise::Test::IntegrationHelpers, type: :feature
-  
+
+  config.before(:suite) do
+    DatabaseRewinder.clean_all multiple: false
+  end
+
+  config.after(:each) do
+    DatabaseRewinder.clean multiple: false
+  end
+
+  config.use_transactional_examples = false
+
   config.filter_run :focus => true
   config.run_all_when_everything_filtered = true
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
