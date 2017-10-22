@@ -84,8 +84,8 @@ events << Event.create!(
   address: "广东深圳空体新媒体实验室虚拟大学园R3-A栋1楼",
   sponsor: "空体",
   limited_num: 300,
-  start_time: Time.local(2017, 10, 25, 19, 00),
-  end_time: Time.local(2017, 10, 25, 22, 00) ,
+  start_time: Time.local(2017, 11, 25, 19, 00),
+  end_time: Time.local(2017, 11, 25, 22, 00) ,
   status: ["preparing","processing"].sample,
   # logo: open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
   # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
@@ -111,8 +111,8 @@ events << Event.create!(
   address: "广东广州海珠区昌岗中路211-2号信和苑2栋1502",
   sponsor: "追梦音乐工作室",
   limited_num: 300,
-  start_time: Time.local(2017, 10, 15, 19, 00),
-  end_time: Time.local(2017, 10, 15, 22, 00) ,
+  start_time: Time.local(2017, 12, 05, 19, 00),
+  end_time: Time.local(2017, 12, 05, 22, 00) ,
   status: ["preparing","processing"].sample,
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/201.jpg")
 )
@@ -280,8 +280,8 @@ events << Event.create!(
   address: "深圳南山大冲国际中心5号楼6楼CD单元",
   sponsor: "ACG国际艺术教育",
   limited_num: 30,
-  start_time: Time.local(2017, 12, 15, 19, 00),
-  end_time: Time.local(2017, 12, 15, 20, 00) ,
+  start_time: Time.local(2017, 12, 18, 19, 00),
+  end_time: Time.local(2017, 12, 18, 20, 00) ,
   status: ["preparing","processing"].sample,
   # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lvg6cifj30xc0m8n37.jpg")
   logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/102.jpeg")
