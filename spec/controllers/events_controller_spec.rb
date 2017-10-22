@@ -2,12 +2,21 @@ require 'rails_helper'
 
 describe EventsController do
   describe "GET #index" do
-    it "assigns events"
-    it "render to index template"
+    let(:user) {create(:user)}
+    let(:event1) {create(:event, title: "foo", user: user)}
+    let(:event2) {create(:event, title: "bar", user: user)}
+    it "assigns events" do
+      get :index
+      expect(assigns[:events]).to eq([event1,event2])
+    end
+    it "render to index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
   end
 
   describe "GET #new" do
-    it "assigns a new event to @events"
+    it "assigns a new event to @events" do
     it "render to :new template"
   end
 

@@ -3,7 +3,7 @@ FactoryBot.define do
     title "music"
     logo {File.new("#{Rails.root}/app/assets/images/music/201.jpg")}
     status "processing"
-    description "here we go"
+    description "This is for test"
     start_time 10.days.from_now
     end_time 11.days.from_now
     province "440000"
