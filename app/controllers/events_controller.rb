@@ -37,14 +37,12 @@ class EventsController < ApplicationController
     if ChinaCity.get(@event.city) ==  "市辖区" || ChinaCity.get(@event.city) == "县"
       @event.city = @event.province
     end
-    byebug
     if @event.save
       redirect_to events_path
     else
       render :new
     end
   end
-
   def apply
     @event = Event.find(params[:id])
     type = params[:type]

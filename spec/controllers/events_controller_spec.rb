@@ -3,9 +3,8 @@ require 'rails_helper'
 describe EventsController do
   describe "GET #index" do
     let(:user) {create(:user)}
-    let(:category) {create(:category)}
-    let(:event1) {create(:event, title: "foo", user: user, category: category)}
-    let(:event2) {create(:event, title: "bar", user: user, category: category)}
+    let(:event1) {create(:event, title: "foo", user: user)}
+    let(:event2) {create(:event, title: "bar", user: user)}
     it "assigns events" do
       get :index
       expect(assigns[:events]).to eq([event1,event2])
@@ -19,7 +18,6 @@ describe EventsController do
   describe "GET #new" do
     context "when user login" do
       let(:user) {create(:user)}
-      let(:category) {create(:category)}
       let(:event) {build(:event)}
       before do
         sign_in user
@@ -43,8 +41,7 @@ describe EventsController do
 
   describe "GET #show" do
     let(:user) {create(:user)}
-    let(:category) {create(:category)}
-    let(:event) {create(:event, title: "foo", user: user, category: category)}
+    let(:event) {create(:event, title: "foo", user: user)}
     it "assigns a requested event to @events" do
       get :show, id: event
       expect(assigns[:event]).to eq event
@@ -58,9 +55,8 @@ describe EventsController do
 
   describe "POST #create" do
     let(:user) {create(:user)}
-    let(:category) {create(:category)}
     before {sign_in user}
-    context "with valid attributes", :focus => true do
+    context "with valid attributes" do
       it "saves the new event in the database" do
         event = build(:event)
         expect do

@@ -16,7 +16,8 @@ FactoryBot.define do
 
   factory :event do
     title "music"
-    logo {File.new("#{Rails.root}/spec/factories/p1.jpg")}
+    # eventlogo {File.new("#{Rails.root}/spec/factories/p1.jpg")}
+    eventlogo { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'factories','p1.jpg'), 'image/jpeg') }
     status "processing"
     description "This is for test"
     start_time 10.days.from_now
