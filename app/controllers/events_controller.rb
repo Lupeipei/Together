@@ -34,9 +34,10 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if ChinaCity.get(@event.city) ==  "市辖区" || ChinaCity.get(event.city) == "县"
+    if ChinaCity.get(@event.city) ==  "市辖区" || ChinaCity.get(@event.city) == "县"
       @event.city = @event.province
     end
+    byebug
     if @event.save
       redirect_to events_path
     else

@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :title, :logo, :status, :description, :presence => true, :on => :create
+  validates :title, :logo, :status, :description, :category_id, :presence => true, :on => :create
   validates :start_time, :end_time, :city, :province,:address, :sponsor,:limited_num, :presence => true, :on => :create
   validate :start_time_early_than_end_time
 
@@ -26,10 +26,8 @@ class Event < ApplicationRecord
   # logic check between start_time and end_time
 
   def start_time_early_than_end_time
-    if self.start_time.present? && self.end_time.present?
-      if self.start_time >= self.end_time
-        errors.add(:end_time, "结束时间不得小于开始时间")
-      end
+    if self.start_time.present? && self.end_time.present? && self.start_time >= self.end_time
+      errors.add(:end_time, "结束时间不得小于开始时间")
     end
   end
 

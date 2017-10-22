@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  after_validation :generate_username, :on => :create
+
 
   def admin?
     self.is_admin
@@ -30,6 +32,12 @@ class User < ApplicationRecord
       self.username
     else
       self.email.split("@").first
+    end
+  end
+
+  def generate_username
+    if self.username.blank?
+      self.username = self.email.split("@").first
     end
   end
 

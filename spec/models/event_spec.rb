@@ -32,6 +32,11 @@ describe Event do
       event.valid?
       expect(event.errors[:end_time]).to include("不能为空字符")
     end
+    it "without a category" do
+      event = build(:event, category_id: nil)
+      event.valid?
+      expect(event.errors[:category_id]).to include("不能为空字符")
+    end
     it "without a city" do
       event = build(:event, city: nil)
       event.valid?

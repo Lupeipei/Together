@@ -55,15 +55,6 @@
         </div>
       </div>
 
-      <!-- <div class="form-group <%= (f.object.errors[:city].any?)? "has-error" : "" %>">
-        <%= f.label :"城市" %>
-        <%= f.text_field :city, :class => "form-control"%>
-
-        <% if f.object.errors[:city]%>
-          <span class="help-block"><%= safe_join(f.object.errors[:city], "、")%></span>
-        <% end %>
-      </div> -->
-
       <div class="form-group <%= (f.object.errors[:address].any?)? "has-error" : "" %>">
         <%= f.input :address,label: "详细地址:", :class => "form-control"%>
 
