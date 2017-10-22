@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-12" style="margin-top: 10px;">
       <div class="col-md-4">
-        <% if @event.logo.present? %>
-          <%= link_to image_tag(@event.logo.url,size: "300x300", :target => "_blank")%>
+        <% if @event.eventlogo.present? %>
+          <%= link_to image_tag(@event.eventlogo.url,size: "300x300", :target => "_blank")%>
         <% else %>
            <%= link_to image_tag("http://placehold.it/300x300&text=No Pic", :target => "_blank")%>
         <% end %>

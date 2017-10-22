@@ -25,12 +25,12 @@
 
   <div class="form-group">
     <%= f.label :"活动图片:" %>
-    <%= f.file_field :logo, :class => "form-control"%>
-    <% if f.object.logo.present? %>
+    <%= f.file_field :eventlogo, :class => "form-control"%>
+    <% if f.object.eventlogo.present? %>
       <label>
-        <%= f.check_box :remove_logo %>
+        <%= f.check_box :remove_eventlogo %>
       </label>
-      <%= link_to f.object.logo.filename, f.object.logo.url, :target => "_blank" %>
+      <%= link_to f.object.eventlogo.filename, f.object.eventlogo.url, :target => "_blank" %>
     <% end %>
   </div>
 

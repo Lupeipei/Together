@@ -21,8 +21,8 @@
       <tr>
         <td>
           <% link_to event_path(event)%>
-           <% if event.logo.present? %>
-            <%= link_to image_tag(event.logo.thumb.url, class:"event_logo_sm")%>
+           <% if event.eventlogo.present? %>
+            <%= link_to image_tag(event.eventlogo.thumb.url, class:"event_logo_sm")%>
           <% else %>
             <%= link_to image_tag("http://placehold.it/100x100&text=No Pic", class: "event_logo_sm")%>
           <% end %>

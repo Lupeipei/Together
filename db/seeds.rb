@@ -88,8 +88,8 @@ events << Event.create!(
   end_time: Time.local(2017, 11, 25, 22, 00) ,
   status: ["preparing","processing"].sample,
   # logo: open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
-  # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/103.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcly1fjfyacf8arj31kw16o1kx.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/103.jpg")
 
 )
 
@@ -114,7 +114,7 @@ events << Event.create!(
   start_time: Time.local(2017, 12, 05, 19, 00),
   end_time: Time.local(2017, 12, 05, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/201.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/201.jpg")
 )
 
 events << Event.create!(
@@ -136,7 +136,7 @@ events << Event.create!(
   start_time: Time.local(2017, 12, 15, 19, 00),
   end_time: Time.local(2017, 12, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/304.jpeg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/music/304.jpeg")
 )
 
 # 户外2
@@ -158,7 +158,7 @@ events << Event.create!(
   start_time: Time.local(2017, 11, 15, 07, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/travel/101.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/travel/101.jpg")
 )
 
 
@@ -181,8 +181,8 @@ events << Event.create!(
   start_time: Time.local(2017, 10, 15, 19, 00),
   end_time: Time.local(2017, 10, 15, 22, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9lhciprpj30rs0g9q4f.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/travel/201.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79gy1fj9lhciprpj30rs0g9q4f.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/travel/201.jpg")
 )
 
 # 约厨3
@@ -207,8 +207,8 @@ events << Event.create!(
   start_time: Time.local(2017, 10, 10, 19, 00),
   end_time: Time.local(2017, 10, 10, 22, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9li8mjq7j30rs0fn13q.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/noddles.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9li8mjq7j30rs0fn13q.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/noddles.jpg")
 )
 
 events << Event.create!(
@@ -229,8 +229,8 @@ events << Event.create!(
   start_time: Time.local(2017, 11, 15, 10, 00),
   end_time: Time.local(2017, 11, 15, 12, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79gy1fj9li8zya9j30k00d9407.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/102.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79gy1fj9li8zya9j30k00d9407.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/cooking/102.jpg")
 )
 
 # 交友4
@@ -253,8 +253,8 @@ events << Event.create!(
   # start_time: Time.local(2017, 08, 20, 19, 00),
   # end_time: Time.local(2017, 08, 20, 22, 00),
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9ljmpheqj30f108648v.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/101.png")
+  # eventlogo: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1fj9ljmpheqj30f108648v.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/101.png")
 )
 
 events << Event.create!(
@@ -283,8 +283,8 @@ events << Event.create!(
   start_time: Time.local(2017, 12, 18, 19, 00),
   end_time: Time.local(2017, 12, 18, 20, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lvg6cifj30xc0m8n37.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/102.jpeg")
+  # eventlogo: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tNc79gy1fj9lvg6cifj30xc0m8n37.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/102.jpeg")
 )
 
 events << Event.create!(
@@ -306,8 +306,8 @@ events << Event.create!(
   start_time: Time.local(2017, 12, 10, 14, 00),
   end_time: Time.local(2017, 12, 10, 18, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/flower.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/friends/flower.jpg")
 )
 
 # 读书5
@@ -331,8 +331,8 @@ events << Event.create!(
   start_time: Time.local(2017, 11, 11, 19, 00),
   end_time: Time.local(2017, 11, 11, 21, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79ly1fj9lvxqgqej31kw0whtfy.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/reading/101.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tNc79ly1fj9lvxqgqej31kw0whtfy.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/reading/101.jpg")
 )
 
 # 游戏6
@@ -353,8 +353,8 @@ events << Event.create!(
   start_time: Time.local(2017, 10, 10, 14, 00),
   end_time: Time.local(2017, 10, 10, 18, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/601.jpeg")
+  # eventlogo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/601.jpeg")
 )
 
 
@@ -377,8 +377,8 @@ events << Event.create!(
   start_time: Time.local(2017, 12, 10, 14, 00),
   end_time: Time.local(2017, 12, 10, 18, 00) ,
   status: ["preparing","processing"].sample,
-  # logo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
-  logo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/602.jpg")
+  # eventlogo: MiniMagick::Image.open("https://ws4.sinaimg.cn/large/006tNc79ly1fj9lweuvsfj30fe083gmf.jpg")
+  eventlogo: MiniMagick::Image.open("#{Rails.root}/app/assets/images/game/602.jpg")
 )
 
 puts "Events are created"

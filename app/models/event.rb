@@ -1,11 +1,11 @@
 class Event < ApplicationRecord
-  validates :title, :logo, :status, :description, :category_id, :presence => true, :on => :create
+  validates :title, :eventlogo, :status, :description, :category_id, :presence => true, :on => :create
   validates :start_time, :end_time, :city, :province,:address, :sponsor,:limited_num, :presence => true, :on => :create
   validate :start_time_early_than_end_time
 
   belongs_to :category, :optional => true
   belongs_to :user, :dependent => :destroy
-  mount_uploader :logo, EventlogoUploader
+  mount_uploader :eventlogo, EventlogoUploader
 
   has_many :favorites
   has_many :fans, through: :favorites, source: :user

@@ -1,8 +1,8 @@
 <div class="eventList-item">
   <p class="eventList-item-pic">
       <%= link_to event_path(event) do %>
-        <% if event.logo.present? %>
-          <%= image_tag(event.logo.url, size: "300x300") %>
+        <% if event.eventlogo.present? %>
+          <%= image_tag(event.eventlogo.url, size: "300x300") %>
         <% else %>
           <%= image_tag("http://placehold.it/300x300&text=No Pic") %>
         <% end %>
